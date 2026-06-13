@@ -75,6 +75,10 @@ common:
     url: rate-limits/docebo-rate-limits.yml
   - type: FinOps
     url: finops/docebo-finops.yml
+  - type: JSONLd
+    url: json-ld/docebo.json
+  - type: BlogPosts
+    url: blogs/blogs.json
 
 maintainers:
   - FN: Kin Lane

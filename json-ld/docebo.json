@@ -1,0 +1,108 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Docebo",
+  "description": "Docebo is an AI-powered learning management system (LMS) platform providing a REST API for managing courses, users, learning plans, certifications, custom reports, gamification data, and e-commerce transactions. It serves enterprise and mid-market organizations with 250+ learners across employee, customer, and partner training use cases.",
+  "url": "https://www.docebo.com",
+  "sameAs": [
+    "https://developer.docebo.com"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "url": "https://help.docebo.com",
+    "contactType": "customer support"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "url": "https://developer.docebo.com/docs/api-general-information",
+    "name": "Docebo REST API Documentation"
+  },
+  "potentialAction": [
+    {
+      "@type": "Action",
+      "name": "API Documentation",
+      "target": "https://developer.docebo.com/docs/api-general-information"
+    },
+    {
+      "@type": "Action",
+      "name": "Developer Portal",
+      "target": "https://developer.docebo.com"
+    },
+    {
+      "@type": "Action",
+      "name": "Authentication Guide",
+      "target": "https://developer.docebo.com/docs/apis-authentication.md"
+    },
+    {
+      "@type": "Action",
+      "name": "Webhook Documentation",
+      "target": "https://developer.docebo.com/docs/creating-and-managing-webhooks.md"
+    },
+    {
+      "@type": "Action",
+      "name": "Status Page",
+      "target": "https://status.docebo.com"
+    },
+    {
+      "@type": "Action",
+      "name": "Community",
+      "target": "https://community.docebo.com/integrations-apis-45"
+    },
+    {
+      "@type": "Action",
+      "name": "Changelog",
+      "target": "https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls"
+    },
+    {
+      "@type": "Action",
+      "name": "Blog",
+      "target": "https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Docebo API Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Learn API",
+        "description": "Formal and informal learning including courses, sessions, enrollment management, channels, and subscription bundles"
+      },
+      {
+        "@type": "Offer",
+        "name": "Manage API",
+        "description": "Platform administration, user management, and configurations"
+      },
+      {
+        "@type": "Offer",
+        "name": "Report API",
+        "description": "Dashboard data and custom reports"
+      },
+      {
+        "@type": "Offer",
+        "name": "E-Commerce API",
+        "description": "Transaction and billing functions"
+      },
+      {
+        "@type": "Offer",
+        "name": "Notifications API",
+        "description": "Notification and DKIM endpoints"
+      },
+      {
+        "@type": "Offer",
+        "name": "Certification API",
+        "description": "Awarded certifications management"
+      },
+      {
+        "@type": "Offer",
+        "name": "Analytics API",
+        "description": "Query builder and custom reports"
+      },
+      {
+        "@type": "Offer",
+        "name": "Skill API",
+        "description": "User skill management and associations"
+      }
+    ]
+  }
+}

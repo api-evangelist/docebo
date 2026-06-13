@@ -1,0 +1,82 @@
+{
+  "blog": {
+    "name": "Docebo APIs and Webhooks Blog",
+    "description": "Blog posts from Docebo covering API and webhook integrations for the learning management system platform.",
+    "url": "https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/",
+    "tags": [
+      "APIs",
+      "Webhooks",
+      "LMS",
+      "Integrations",
+      "Learning Management"
+    ],
+    "last_fetched": "2026-06-13",
+    "posts": [
+      {
+        "title": "Webhook (HTTP)",
+        "url": "https://www.docebo.com/blog/integration-type/apis-and-webhooks/",
+        "description": "Explains Docebo's webhook functionality, which allows triggers once an event occurs in Docebo, sending information about that event to a specific payload URL. Covers data collection for reports, integrations, and dashboards including HCM system connections and content management updates.",
+        "tags": [
+          "Webhooks",
+          "HTTP",
+          "Integrations",
+          "HCM"
+        ]
+      }
+    ]
+  },
+  "developer_resources": {
+    "documentation": [
+      {
+        "title": "Docebo API General Information",
+        "url": "https://developer.docebo.com/docs/api-general-information.md",
+        "description": "Overview of the Docebo REST API including base URL structure, HTTP methods, data formats, pagination, and rate limiting."
+      },
+      {
+        "title": "APIs Authentication",
+        "url": "https://developer.docebo.com/docs/apis-authentication.md",
+        "description": "Authentication guide covering OAuth 2.0 grant types (Resource Owner Password, Client Credentials, Authorization Code) and JWT Bearer authentication."
+      },
+      {
+        "title": "Get Started with the Docebo API Browser",
+        "url": "https://developer.docebo.com/docs/get-started-with-the-docebo-api-browser.md",
+        "description": "Guide to using the interactive API browser built into the Docebo platform at /api-browser/ for testing and reference documentation."
+      },
+      {
+        "title": "Overview of API Services and Endpoints",
+        "url": "https://developer.docebo.com/docs/overview-of-api-services-and-endpoints.md",
+        "description": "Covers all Docebo API services: Learn, Skill, Share, Manage, Notifications, E-commerce, Marketplace, Report, Pages, OTJ, Audittrail, Course, Analytics, Audiences, Poweruser, Learningplan, Enrollment, and Certification."
+      },
+      {
+        "title": "Creating and Managing Webhooks",
+        "url": "https://developer.docebo.com/docs/creating-and-managing-webhooks.md",
+        "description": "Step-by-step guide for setting up webhooks in the Docebo platform."
+      },
+      {
+        "title": "Webhook Events",
+        "url": "https://developer.docebo.com/docs/webhooks-events.md",
+        "description": "Reference of all events that can trigger webhooks in Docebo."
+      },
+      {
+        "title": "Webhook Error Management",
+        "url": "https://developer.docebo.com/docs/webhooks-error-management.md",
+        "description": "Guide for handling and troubleshooting webhook delivery errors."
+      },
+      {
+        "title": "Embedded Learning for React Web Applications",
+        "url": "https://developer.docebo.com/docs/embedded-learning-for-react-web-applications.md",
+        "description": "Integration guide for embedding Docebo learning components into React applications."
+      },
+      {
+        "title": "Docebo Connect",
+        "url": "https://developer.docebo.com/docs/docebo-connect-1.md",
+        "description": "Integration platform connecting to 400+ SaaS systems including Google Calendar, Microsoft Entra ID, Amazon S3, HubSpot, Okta, and Workday."
+      },
+      {
+        "title": "Deprecated and Changed API Calls",
+        "url": "https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls",
+        "description": "Changelog of deprecated and changed Docebo API calls."
+      }
+    ]
+  }
+}
