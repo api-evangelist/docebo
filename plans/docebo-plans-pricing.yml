@@ -1,0 +1,70 @@
+name: Docebo Plans and Pricing
+description: Pricing plans and tiers for the Docebo AI-powered learning management platform
+url: https://www.docebo.com/pricing/
+plans:
+  - name: Elevate
+    description: Mid-market organizations needing a full-featured AI-powered LMS with core integrations and standard API access
+    custom_pricing: true
+    user_models:
+      - Monthly Active Users (MAU)
+      - Yearly Active Users (YAU)
+      - Registered Active Users (RAU)
+    minimum_learners: 250
+    features:
+      - AI Content Creation (usage-based credits)
+      - Harmony AI Copilot
+      - White-labeling
+      - Certification Tracking
+      - Mobile Learning
+      - Social Learning
+      - Gamification
+      - Up to 4 included integrations
+      - Standard API rate limits
+      - Standard sandbox environments
+      - Standard support tier
+    add_ons:
+      - Advanced Analytics
+      - Docebo Roleplay (AI credits)
+      - Branded Mobile App
+      - Extended Enterprise
+      - Content Marketplace
+      - Communities
+      - E-Commerce
+      - Docebo Labs by Skillable
+      - Microsoft Teams integration
+      - Salesforce integration
+
+  - name: Enterprise
+    description: Large enterprises requiring advanced analytics, dedicated infrastructure, higher API limits, and priority support
+    custom_pricing: true
+    user_models:
+      - Monthly Active Users (MAU)
+      - Yearly Active Users (YAU)
+      - Registered Active Users (RAU)
+    minimum_learners: 250
+    features:
+      - Everything in Elevate
+      - Advanced Analytics (included)
+      - Branded Mobile App (included)
+      - 2x upgraded sandbox environments
+      - API rate limit 100 calls/min
+      - Dedicated Database
+      - Up to 6 included integrations
+      - Elite priority support
+    add_ons:
+      - Docebo Roleplay (AI credits)
+      - Extended Enterprise
+      - Content Marketplace
+      - Communities
+      - E-Commerce
+      - Docebo Labs by Skillable
+      - Microsoft Teams integration
+      - Salesforce integration
+      - API Limit Upgrades / Dedicated Architecture
+
+notes:
+  - Pricing is contact-sales only; no public price list is published
+  - Typical market estimates range from $25,000/year minimum to $7-$10 per active user per month
+  - Contract lengths typically 1–5 years
+  - Overage policy: incremental charges apply; upgrade recommended at ~30% overage
+  - 365Talents (Skills Intelligence) is available as a separate add-on product

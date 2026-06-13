@@ -1,0 +1,81 @@
+aid: docebo
+name: Docebo
+description: Docebo is an AI-powered learning management system (LMS) platform providing a REST API for managing courses, users, learning plans, certifications, custom reports, gamification data, and e-commerce transactions. It serves enterprise and mid-market organizations with 250+ learners across employee, customer, and partner training use cases.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/docebo/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Learning Management System
+  - LMS
+  - E-Learning
+  - Training
+  - Courses
+  - Certifications
+  - Gamification
+  - Learning Plans
+  - HR Tech
+  - AI Learning
+apis:
+  - name: Docebo REST API
+    description: RESTful API for managing all aspects of the Docebo learning platform including courses, users, enrollments, certifications, learning plans, reports, gamification, and e-commerce.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://developer.docebo.com/docs/api-general-information
+    baseURL: https://{domain}.docebosaas.com
+    tags:
+      - Courses
+      - Users
+      - Enrollments
+      - Certifications
+      - Learning Plans
+      - Reports
+      - Gamification
+      - E-Commerce
+      - Webhooks
+    properties:
+      - type: Documentation
+        url: https://developer.docebo.com/docs/api-general-information
+      - type: OpenAPI
+        url: https://developer.docebo.com
+      - type: Authentication
+        url: https://developer.docebo.com/docs/api-guides
+      - type: Webhooks
+        url: https://developer.docebo.com
+      - type: ChangeLog
+        url: https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls
+      - type: Status
+        url: https://status.docebo.com
+    contact:
+      - FN: Docebo Support
+        url: https://help.docebo.com
+
+common:
+  - type: Documentation
+    url: https://developer.docebo.com/docs/api-general-information
+  - type: Portal
+    url: https://developer.docebo.com
+  - type: Authentication
+    url: https://developer.docebo.com/docs/api-guides
+  - type: Webhooks
+    url: https://developer.docebo.com
+  - type: ChangeLog
+    url: https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls
+  - type: Status
+    url: https://status.docebo.com
+  - type: Blog
+    url: https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/
+  - type: Community
+    url: https://community.docebo.com/integrations-apis-45
+  - type: ProductUpdates
+    url: https://help.docebo.com/hc/en-us/articles/19807231971474-Product-updates
+  - type: Plans
+    url: plans/docebo-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/docebo-rate-limits.yml
+  - type: FinOps
+    url: finops/docebo-finops.yml
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,48 @@
+name: Docebo FinOps
+description: Financial operations guidance for managing costs and API consumption on the Docebo platform
+url: https://www.docebo.com/pricing/
+cost_drivers:
+  - name: Active Users
+    description: Pricing is based on active learner count (MAU, YAU, or RAU) — not total registered accounts
+    impact: High
+    guidance: Audit active vs. registered users regularly; deactivate dormant accounts to manage costs
+
+  - name: Integrations Count
+    description: Elevate includes up to 4 integrations; Enterprise includes up to 6; additional integrations incur extra cost
+    impact: Medium
+    guidance: Consolidate integrations using Docebo Connect workflows where possible
+
+  - name: AI Content Credits
+    description: AI Content Creation (including Harmony AI Copilot and Docebo Roleplay) is usage-based
+    impact: Medium
+    guidance: Track AI credit consumption via platform analytics; set budgets per team or department
+
+  - name: API Rate Limit Tier
+    description: Enterprise gets 100 calls/min; Elevate has standard limits; add-ons available for higher limits
+    impact: Medium
+    guidance: Implement caching and batch API calls to stay within rate limits and avoid add-on costs
+
+  - name: Advanced Analytics
+    description: Included in Enterprise; add-on cost for Elevate customers
+    impact: Low-Medium
+    guidance: Evaluate whether built-in reporting suffices before purchasing the add-on
+
+  - name: Contract Length
+    description: Longer contracts (3–5 years) typically yield better per-user pricing
+    impact: High
+    guidance: Project learner growth before committing to a contract length
+
+optimization_strategies:
+  - Use batch API endpoints (identified by /batch suffix) to reduce total API call volume
+  - Implement pagination efficiently — request up to 200 items per page to minimize round trips
+  - Cache API responses where data is read-heavy and infrequently updated
+  - Monitor overage alerts — upgrade is recommended at ~30% overage to avoid per-user incremental charges
+  - Leverage Docebo Connect (workflow automation) to reduce custom integration build and maintenance costs
+  - Use webhooks for event-driven integration rather than polling APIs to reduce unnecessary API calls
+
+billing_model:
+  type: Annual subscription
+  currency: USD
+  minimum_commitment: 1 year (typical 3–5 years)
+  overage_policy: Incremental per-user charges; upgrade recommended at 30% overage
+  pricing_visibility: Contact sales only — no self-serve pricing published

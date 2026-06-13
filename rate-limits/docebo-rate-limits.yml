@@ -1,0 +1,29 @@
+name: Docebo API Rate Limits
+description: Rate limiting policies for the Docebo REST API
+url: https://developer.docebo.com/docs/api-general-information
+limits:
+  - plan: Elevate
+    rate: Standard
+    unit: per minute
+    notes: Exact threshold not publicly documented; contact Docebo for specifics
+
+  - plan: Enterprise
+    rate: 100
+    unit: calls per minute
+    notes: Documented on the Docebo pricing page; can be increased via add-on
+
+enforcement:
+  - http_status: 429
+    description: Too Many Requests — returned when rate limit is exceeded
+    retry_strategy: Exponential backoff recommended
+
+pagination:
+  default_page_size: 10
+  max_page_size: 200
+  notes: Controlled via per_page query parameter; batch endpoints support bulk operations
+
+general_notes:
+  - Rate limits may vary depending on platform configuration
+  - API Limit Upgrades / Dedicated Architecture add-on available for heavy enterprise workloads
+  - Trust Center page documents per-tier specifics for contracted customers
+  - HTTPS strongly recommended for all API calls
