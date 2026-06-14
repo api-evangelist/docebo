@@ -1,0 +1,1331 @@
+"""
+Docebo LMS GraphQL Schema
+Conceptual schema derived from the Docebo REST API (https://developers.docebo.com/reference).
+Covers courses, users, enrollments, learning plans, assessments, certifications,
+sessions, reporting, integrations, and platform configuration.
+"""
+
+# ─── Scalars ────────────────────────────────────────────────────────────────
+
+scalar DateTime
+scalar Date
+scalar JSON
+scalar URL
+
+# ─── Enums ──────────────────────────────────────────────────────────────────
+
+enum CourseType {
+  ELEARNING
+  CLASSROOM
+  WEBINAR
+  VIRTUAL_CLASSROOM
+  LEARNING_PLAN
+  SCORM
+  XAPI
+  AICC
+}
+
+enum CourseStatus {
+  ACTIVE
+  INACTIVE
+  UNDER_MAINTENANCE
+  COMING_SOON
+}
+
+enum EnrollmentStatus {
+  ENROLLED
+  IN_PROGRESS
+  COMPLETED
+  EXPIRED
+  SUSPENDED
+  WAITING
+}
+
+enum CompletionStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+  PASSED
+  UNKNOWN
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  PENDING
+  DELETED
+}
+
+enum SessionStatus {
+  SCHEDULED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum ReportType {
+  USER
+  COURSE
+  ENROLLMENT
+  CERTIFICATION
+  LEARNING_PLAN
+  CUSTOM
+}
+
+enum ExportFormat {
+  CSV
+  XLSX
+  PDF
+}
+
+enum WebhookEventType {
+  COURSE_CREATED
+  COURSE_UPDATED
+  ENROLLMENT_CREATED
+  ENROLLMENT_COMPLETED
+  USER_CREATED
+  USER_UPDATED
+  CERTIFICATE_ISSUED
+  BADGE_AWARDED
+  TEST_COMPLETED
+  SESSION_COMPLETED
+}
+
+enum SSOProtocol {
+  SAML2
+  OAUTH2
+  OPENID_CONNECT
+}
+
+enum CustomFieldType {
+  TEXT
+  TEXTAREA
+  DROPDOWN
+  CHECKBOX
+  DATE
+  NUMBER
+  FILE
+}
+
+enum SkillLevelType {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+  EXPERT
+}
+
+enum IntegrationType {
+  SCORM_12
+  SCORM_2004
+  XAPI
+  AICC
+  TINCAN
+}
+
+enum BadgeType {
+  MANUAL
+  AUTOMATIC
+  COURSE_COMPLETION
+  LEVEL_ACHIEVEMENT
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  EXPIRED
+  CANCELLED
+  PENDING
+}
+
+# ─── Course & Content Types ──────────────────────────────────────────────────
+
+"""A course in the Docebo LMS."""
+type Course {
+  id: ID!
+  name: String!
+  code: String
+  slug: String
+  type: CourseType!
+  status: CourseStatus!
+  description: String
+  longDescription: String
+  imageUrl: URL
+  thumbnailUrl: URL
+  language: Language
+  duration: Int
+  credits: Float
+  category: Category
+  catalog: CourseCatalog
+  channel: Channel
+  tags: [String!]
+  customFields: [CustomFieldValue!]
+  editions: [CourseEdition!]
+  sessions: [Session!]
+  enrolledUsers: [EnrolledUser!]
+  tests: [Test!]
+  certificates: [Certificate!]
+  skills: [Skill!]
+  learningObjectives: [String!]
+  prerequisites: [Course!]
+  suggestedCourses: [Course!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  publishedAt: DateTime
+  archivedAt: DateTime
+}
+
+"""An edition (version or iteration) of a course."""
+type CourseEdition {
+  id: ID!
+  course: Course!
+  name: String!
+  version: String
+  status: CourseStatus!
+  startDate: Date
+  endDate: Date
+  maxEnrollments: Int
+  enrollmentCount: Int
+  sessions: [Session!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A catalog grouping courses for visibility and assignment."""
+type CourseCatalog {
+  id: ID!
+  name: String!
+  description: String
+  isPublic: Boolean!
+  courses: [Course!]
+  branches: [Branch!]
+  groups: [Group!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A category for organizing courses."""
+type Category {
+  id: ID!
+  name: String!
+  code: String
+  description: String
+  parent: Category
+  children: [Category!]
+  courses: [Course!]
+  iconUrl: URL
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A channel used for content distribution and discovery."""
+type Channel {
+  id: ID!
+  name: String!
+  description: String
+  imageUrl: URL
+  isPublic: Boolean!
+  playlists: [Playlist!]
+  courses: [Course!]
+  subscribers: [User!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A playlist grouping courses within a channel."""
+type Playlist {
+  id: ID!
+  name: String!
+  description: String
+  channel: Channel!
+  courses: [Course!]
+  imageUrl: URL
+  isOrdered: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Learning Plan Types ─────────────────────────────────────────────────────
+
+"""A structured learning path made up of multiple items."""
+type LearningPlan {
+  id: ID!
+  name: String!
+  description: String
+  status: CourseStatus!
+  imageUrl: URL
+  items: [LearningPlanItem!]!
+  enrollments: [Enrollment!]
+  completions: [Completion!]
+  certificates: [Certificate!]
+  customFields: [CustomFieldValue!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""An item (course or resource) within a learning plan."""
+type LearningPlanItem {
+  id: ID!
+  learningPlan: LearningPlan!
+  course: Course
+  order: Int!
+  isRequired: Boolean!
+  isMandatory: Boolean!
+  waitingPeriodDays: Int
+  unlockAfterItem: LearningPlanItem
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Enrollment & Progress Types ─────────────────────────────────────────────
+
+"""A user enrolled in a course."""
+type EnrolledUser {
+  id: ID!
+  user: User!
+  course: Course!
+  enrollment: Enrollment!
+  progress: Progress
+  completion: Completion
+  score: Score
+  certificateIssued: Boolean!
+  certificate: Certificate
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""An enrollment record linking a user to a course or learning plan."""
+type Enrollment {
+  id: ID!
+  user: User!
+  course: Course
+  learningPlan: LearningPlan
+  status: EnrollmentStatus!
+  enrollmentDate: DateTime!
+  dueDate: DateTime
+  completionDate: DateTime
+  expirationDate: DateTime
+  progress: Progress
+  score: Score
+  certificate: Certificate
+  createdBy: User
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Completion record for a course or learning plan item."""
+type Completion {
+  id: ID!
+  user: User!
+  course: Course
+  learningPlan: LearningPlan
+  status: CompletionStatus!
+  completedAt: DateTime
+  score: Float
+  timeSpentSeconds: Int
+  attempts: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Progress tracking for a user within a course."""
+type Progress {
+  id: ID!
+  user: User!
+  course: Course!
+  percentage: Float!
+  status: CompletionStatus!
+  lastAccessedAt: DateTime
+  timeSpentSeconds: Int
+  currentUnit: String
+  updatedAt: DateTime!
+}
+
+# ─── Session & Instruction Types ─────────────────────────────────────────────
+
+"""An instructor-led training session (ILT or VILT)."""
+type Session {
+  id: ID!
+  course: Course!
+  edition: CourseEdition
+  name: String!
+  status: SessionStatus!
+  sessionType: CourseType!
+  maxEnrollments: Int
+  enrollmentCount: Int
+  schedules: [SessionSchedule!]
+  instructors: [Instructor!]
+  classroom: Classroom
+  virtualClassroom: VirtualClassroom
+  enrolledUsers: [EnrolledUser!]
+  customFields: [CustomFieldValue!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A scheduled date/time block for a session."""
+type SessionSchedule {
+  id: ID!
+  session: Session!
+  startDateTime: DateTime!
+  endDateTime: DateTime!
+  timezone: String!
+  location: String
+  isOnline: Boolean!
+  meetingUrl: URL
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""An instructor who delivers sessions."""
+type Instructor {
+  id: ID!
+  user: User!
+  bio: String
+  specializations: [String!]
+  sessions: [Session!]
+  webinarSessions: [WebinarSession!]
+  rating: Float
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A physical classroom location."""
+type Classroom {
+  id: ID!
+  name: String!
+  address: String
+  city: String
+  country: String
+  capacity: Int
+  sessions: [Session!]
+  customFields: [CustomFieldValue!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A virtual classroom integration for online sessions."""
+type VirtualClassroom {
+  id: ID!
+  name: String!
+  provider: String!
+  meetingUrl: URL
+  hostKey: String
+  capacity: Int
+  sessions: [Session!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A webinar session linked to a webinar course."""
+type WebinarSession {
+  id: ID!
+  webinar: Webinar!
+  name: String!
+  startDateTime: DateTime!
+  endDateTime: DateTime!
+  timezone: String!
+  maxAttendees: Int
+  attendeeCount: Int
+  recordingUrl: URL
+  instructors: [Instructor!]
+  status: SessionStatus!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A webinar course type."""
+type Webinar {
+  id: ID!
+  course: Course!
+  provider: String!
+  externalId: String
+  sessions: [WebinarSession!]
+  recordingUrl: URL
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Assessment Types ─────────────────────────────────────────────────────────
+
+"""A test or quiz within a course."""
+type Test {
+  id: ID!
+  course: Course!
+  name: String!
+  description: String
+  passingScore: Float!
+  maxAttempts: Int
+  timeLimitSeconds: Int
+  isRandomized: Boolean!
+  questions: [Question!]!
+  attempts: [TestAttempt!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A single attempt by a user on a test."""
+type TestAttempt {
+  id: ID!
+  test: Test!
+  user: User!
+  score: Score!
+  status: CompletionStatus!
+  startedAt: DateTime!
+  completedAt: DateTime
+  answers: [Answer!]
+  timeSpentSeconds: Int
+  attemptNumber: Int!
+  createdAt: DateTime!
+}
+
+"""A question within a test."""
+type Question {
+  id: ID!
+  test: Test!
+  text: String!
+  questionType: String!
+  points: Float!
+  order: Int!
+  answers: [Answer!]
+  explanation: String
+  mediaUrl: URL
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""An answer option for a question."""
+type Answer {
+  id: ID!
+  question: Question!
+  text: String!
+  isCorrect: Boolean
+  order: Int!
+  explanation: String
+  selectedInAttempt: TestAttempt
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A score record for a user on a test or course."""
+type Score {
+  id: ID!
+  user: User!
+  course: Course
+  test: Test
+  attempt: TestAttempt
+  value: Float!
+  maxValue: Float!
+  percentage: Float!
+  isPassed: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Achievement Types ────────────────────────────────────────────────────────
+
+"""A certificate issued upon course or learning plan completion."""
+type Certificate {
+  id: ID!
+  name: String!
+  description: String
+  templateUrl: URL
+  course: Course
+  learningPlan: LearningPlan
+  user: User
+  enrollment: Enrollment
+  issuedAt: DateTime
+  expiresAt: DateTime
+  serialNumber: String
+  downloadUrl: URL
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A gamification badge awarded to users."""
+type Badge {
+  id: ID!
+  name: String!
+  description: String
+  imageUrl: URL!
+  type: BadgeType!
+  course: Course
+  criteria: String
+  points: Int
+  awardedTo: [User!]
+  awardedCount: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Organization Structure Types ────────────────────────────────────────────
+
+"""An organizational branch (division, department, or location)."""
+type Branch {
+  id: ID!
+  name: String!
+  code: String
+  description: String
+  parent: Branch
+  children: [Branch!]
+  users: UserConnection!
+  groups: [Group!]
+  catalogs: [CourseCatalog!]
+  manager: Manager
+  customFields: [CustomFieldValue!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A group of users within the platform."""
+type Group {
+  id: ID!
+  name: String!
+  description: String
+  users: UserConnection!
+  branch: Branch
+  catalogs: [CourseCatalog!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A Docebo platform user."""
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  status: UserStatus!
+  profile: UserProfile
+  branch: Branch
+  groups: [Group!]
+  enrollments: [Enrollment!]
+  completions: [Completion!]
+  certificates: [Certificate!]
+  badges: [Badge!]
+  skills: [UserSkill!]
+  manager: Manager
+  subscription: Subscription
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  lastLoginAt: DateTime
+}
+
+"""Extended profile information for a user."""
+type UserProfile {
+  id: ID!
+  user: User!
+  firstName: String
+  lastName: String
+  displayName: String
+  avatarUrl: URL
+  jobTitle: String
+  department: String
+  location: String
+  phone: String
+  bio: String
+  language: Language
+  timezone: String
+  customFields: [CustomFieldValue!]
+  updatedAt: DateTime!
+}
+
+"""A linking record between a user and a group."""
+type UserGroup {
+  id: ID!
+  user: User!
+  group: Group!
+  addedAt: DateTime!
+  addedBy: User
+}
+
+"""A subscription plan for a user or account."""
+type Subscription {
+  id: ID!
+  user: User
+  domain: Domain
+  plan: String!
+  status: SubscriptionStatus!
+  startDate: Date!
+  endDate: Date
+  maxUsers: Int
+  currentUsers: Int
+  features: [String!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A manager who oversees a set of users."""
+type Manager {
+  id: ID!
+  user: User!
+  directReports: [User!]
+  branch: Branch
+  permissions: [String!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A super administrator of the platform."""
+type SuperAdmin {
+  id: ID!
+  user: User!
+  domains: [Domain!]
+  permissions: [String!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Platform & Configuration Types ──────────────────────────────────────────
+
+"""A Docebo tenant domain."""
+type Domain {
+  id: ID!
+  name: String!
+  subdomain: String!
+  baseUrl: URL!
+  language: Language
+  locale: Locale
+  ssoConfig: SSOConfig
+  subscription: Subscription
+  appConfig: AppConfig
+  customFields: [CustomField!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Application-level configuration for a domain."""
+type AppConfig {
+  id: ID!
+  domain: Domain!
+  logoUrl: URL
+  faviconUrl: URL
+  primaryColor: String
+  defaultLanguage: Language
+  features: JSON
+  emailSettings: JSON
+  privacyPolicyUrl: URL
+  termsOfServiceUrl: URL
+  updatedAt: DateTime!
+}
+
+# ─── Reporting Types ──────────────────────────────────────────────────────────
+
+"""A custom or standard report definition."""
+type Report {
+  id: ID!
+  name: String!
+  type: ReportType!
+  description: String
+  filters: [ReportFilter!]
+  columns: [String!]
+  createdBy: User!
+  exports: [ReportExport!]
+  widgets: [Widget!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A filter applied to a report."""
+type ReportFilter {
+  id: ID!
+  report: Report!
+  field: String!
+  operator: String!
+  value: String!
+  createdAt: DateTime!
+}
+
+"""An export job for a report."""
+type ReportExport {
+  id: ID!
+  report: Report!
+  format: ExportFormat!
+  status: String!
+  downloadUrl: URL
+  expiresAt: DateTime
+  requestedBy: User!
+  requestedAt: DateTime!
+  completedAt: DateTime
+}
+
+"""A dashboard widget referencing a report or data source."""
+type Widget {
+  id: ID!
+  name: String!
+  widgetType: String!
+  report: Report
+  config: JSON
+  dashboard: Dashboard
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A dashboard grouping multiple widgets."""
+type Dashboard {
+  id: ID!
+  name: String!
+  description: String
+  isDefault: Boolean!
+  widgets: [DashboardWidget!]
+  owner: User
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A positioned widget on a dashboard."""
+type DashboardWidget {
+  id: ID!
+  dashboard: Dashboard!
+  widget: Widget!
+  positionX: Int!
+  positionY: Int!
+  width: Int!
+  height: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Integration Types ────────────────────────────────────────────────────────
+
+"""A third-party integration configuration."""
+type Integration {
+  id: ID!
+  name: String!
+  type: IntegrationType!
+  isActive: Boolean!
+  config: JSON
+  domain: Domain
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A SCORM package associated with a course."""
+type SCORM {
+  id: ID!
+  course: Course!
+  version: String!
+  packageUrl: URL!
+  manifestUrl: URL
+  entryPoint: String
+  launchParameters: String
+  completionThreshold: Float
+  masteryScore: Float
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""An xAPI (Experience API) activity record."""
+type xAPI {
+  id: ID!
+  course: Course!
+  activityId: URL!
+  lrsEndpoint: URL!
+  authToken: String
+  trackingEnabled: Boolean!
+  statementCount: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A TinCan (xAPI predecessor) package."""
+type TinCan {
+  id: ID!
+  course: Course!
+  launchUrl: URL!
+  activityId: URL
+  authToken: String
+  trackingEnabled: Boolean!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""An AICC (Aviation Industry CBT Committee) package."""
+type AICC {
+  id: ID!
+  course: Course!
+  packageUrl: URL!
+  hacp: String
+  sessionId: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Security & Auth Types ────────────────────────────────────────────────────
+
+"""An authentication token issued to a user or application."""
+type AuthToken {
+  id: ID!
+  token: String!
+  tokenType: String!
+  expiresAt: DateTime!
+  scope: [String!]
+  user: User
+  createdAt: DateTime!
+}
+
+"""An OAuth2 client configuration for API access."""
+type OAuth2 {
+  id: ID!
+  clientId: String!
+  clientName: String!
+  redirectUris: [URL!]!
+  scopes: [String!]!
+  grantTypes: [String!]!
+  isActive: Boolean!
+  domain: Domain
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A webhook event payload sent to a registered endpoint."""
+type WebhookEvent {
+  id: ID!
+  webhook: Webhook!
+  eventType: WebhookEventType!
+  payload: JSON!
+  deliveredAt: DateTime
+  responseCode: Int
+  isDelivered: Boolean!
+  retryCount: Int!
+  createdAt: DateTime!
+}
+
+"""A registered webhook endpoint."""
+type Webhook {
+  id: ID!
+  name: String!
+  url: URL!
+  secret: String
+  eventTypes: [WebhookEventType!]!
+  isActive: Boolean!
+  domain: Domain!
+  events: [WebhookEvent!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""Single Sign-On configuration for a domain."""
+type SSOConfig {
+  id: ID!
+  domain: Domain!
+  protocol: SSOProtocol!
+  isActive: Boolean!
+  samlConfig: SAMLConfig
+  oauth2Config: OAuth2
+  attributeMapping: JSON
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""SAML 2.0 SSO configuration details."""
+type SAMLConfig {
+  id: ID!
+  ssoConfig: SSOConfig!
+  idpEntityId: String!
+  idpSsoUrl: URL!
+  idpCertificate: String!
+  spEntityId: String!
+  spAcsUrl: URL!
+  signRequests: Boolean!
+  encryptAssertions: Boolean!
+  nameIdFormat: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""An API key for authenticating REST API requests."""
+type APIKey {
+  id: ID!
+  name: String!
+  keyPrefix: String!
+  scopes: [String!]!
+  isActive: Boolean!
+  lastUsedAt: DateTime
+  expiresAt: DateTime
+  createdBy: User!
+  domain: Domain!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Localization Types ───────────────────────────────────────────────────────
+
+"""A language supported by the platform."""
+type Language {
+  id: ID!
+  code: String!
+  name: String!
+  nativeName: String!
+  isDefault: Boolean!
+  isActive: Boolean!
+  locales: [Locale!]
+}
+
+"""A locale defining regional formatting settings."""
+type Locale {
+  id: ID!
+  language: Language!
+  region: String!
+  dateFormat: String!
+  timeFormat: String!
+  numberFormat: String!
+  currency: String
+  isDefault: Boolean!
+}
+
+"""A custom field definition for extending platform objects."""
+type CustomField {
+  id: ID!
+  name: String!
+  label: String!
+  fieldType: CustomFieldType!
+  isRequired: Boolean!
+  defaultValue: String
+  options: [String!]
+  appliesTo: String!
+  domain: Domain!
+  order: Int!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A value for a custom field on a specific object."""
+type CustomFieldValue {
+  id: ID!
+  customField: CustomField!
+  value: String
+  objectId: ID!
+  objectType: String!
+  updatedAt: DateTime!
+}
+
+# ─── Skills & Competency Types ────────────────────────────────────────────────
+
+"""A skill that can be associated with courses and users."""
+type Skill {
+  id: ID!
+  name: String!
+  description: String
+  category: Category
+  levels: [SkillLevel!]
+  courses: [Course!]
+  users: [UserSkill!]
+  competencyPaths: [CompetencyPath!]
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A proficiency level for a skill."""
+type SkillLevel {
+  id: ID!
+  skill: Skill!
+  name: String!
+  levelType: SkillLevelType!
+  order: Int!
+  description: String
+  criteria: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A user's proficiency in a particular skill."""
+type UserSkill {
+  id: ID!
+  user: User!
+  skill: Skill!
+  currentLevel: SkillLevel
+  targetLevel: SkillLevel
+  assessedAt: DateTime
+  endorsedBy: User
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+"""A structured path to achieve competency in a set of skills."""
+type CompetencyPath {
+  id: ID!
+  name: String!
+  description: String
+  skills: [Skill!]!
+  courses: [Course!]
+  learningPlan: LearningPlan
+  targetRole: String
+  estimatedDurationDays: Int
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# ─── Connection Types ─────────────────────────────────────────────────────────
+
+"""Paginated connection for User lists."""
+type UserConnection {
+  totalCount: Int!
+  nodes: [User!]!
+  pageInfo: PageInfo!
+}
+
+"""Paginated connection for Course lists."""
+type CourseConnection {
+  totalCount: Int!
+  nodes: [Course!]!
+  pageInfo: PageInfo!
+}
+
+"""Paginated connection for Enrollment lists."""
+type EnrollmentConnection {
+  totalCount: Int!
+  nodes: [Enrollment!]!
+  pageInfo: PageInfo!
+}
+
+"""Pagination metadata."""
+type PageInfo {
+  page: Int!
+  pageSize: Int!
+  totalPages: Int!
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+}
+
+# ─── Input Types ──────────────────────────────────────────────────────────────
+
+input EnrollUserInput {
+  userId: ID!
+  courseId: ID
+  learningPlanId: ID
+  dueDate: DateTime
+  sendNotification: Boolean
+}
+
+input CreateReportInput {
+  name: String!
+  type: ReportType!
+  description: String
+  filters: [ReportFilterInput!]
+  columns: [String!]
+}
+
+input ReportFilterInput {
+  field: String!
+  operator: String!
+  value: String!
+}
+
+input CreateCourseInput {
+  name: String!
+  code: String
+  type: CourseType!
+  description: String
+  categoryId: ID
+  language: String
+  duration: Int
+}
+
+input UpdateUserInput {
+  email: String
+  status: UserStatus
+  branchId: ID
+  profile: UserProfileInput
+}
+
+input UserProfileInput {
+  firstName: String
+  lastName: String
+  jobTitle: String
+  department: String
+  language: String
+  timezone: String
+}
+
+input CreateWebhookInput {
+  name: String!
+  url: URL!
+  eventTypes: [WebhookEventType!]!
+  secret: String
+}
+
+# ─── Query Type ───────────────────────────────────────────────────────────────
+
+type Query {
+  # Courses
+  course(id: ID!): Course
+  courses(
+    status: CourseStatus
+    type: CourseType
+    categoryId: ID
+    catalogId: ID
+    channelId: ID
+    search: String
+    page: Int
+    pageSize: Int
+  ): CourseConnection!
+
+  courseEdition(id: ID!): CourseEdition
+  courseCatalog(id: ID!): CourseCatalog
+  courseCatalogs(page: Int, pageSize: Int): [CourseCatalog!]!
+
+  # Categories & Channels
+  category(id: ID!): Category
+  categories(parentId: ID, page: Int, pageSize: Int): [Category!]!
+  channel(id: ID!): Channel
+  channels(page: Int, pageSize: Int): [Channel!]!
+  playlist(id: ID!): Playlist
+
+  # Learning Plans
+  learningPlan(id: ID!): LearningPlan
+  learningPlans(status: CourseStatus, page: Int, pageSize: Int): [LearningPlan!]!
+
+  # Enrollments & Progress
+  enrollment(id: ID!): Enrollment
+  enrollments(
+    userId: ID
+    courseId: ID
+    status: EnrollmentStatus
+    page: Int
+    pageSize: Int
+  ): EnrollmentConnection!
+  progress(userId: ID!, courseId: ID!): Progress
+  completion(userId: ID!, courseId: ID!): Completion
+
+  # Sessions & Instruction
+  session(id: ID!): Session
+  sessions(courseId: ID, status: SessionStatus, page: Int, pageSize: Int): [Session!]!
+  instructor(id: ID!): Instructor
+  instructors(page: Int, pageSize: Int): [Instructor!]!
+  classroom(id: ID!): Classroom
+  classrooms(page: Int, pageSize: Int): [Classroom!]!
+  virtualClassroom(id: ID!): VirtualClassroom
+  webinar(id: ID!): Webinar
+  webinarSession(id: ID!): WebinarSession
+
+  # Assessments
+  test(id: ID!): Test
+  tests(courseId: ID, page: Int, pageSize: Int): [Test!]!
+  testAttempt(id: ID!): TestAttempt
+  testAttempts(userId: ID, testId: ID, page: Int, pageSize: Int): [TestAttempt!]!
+
+  # Achievements
+  certificate(id: ID!): Certificate
+  certificates(userId: ID, courseId: ID, page: Int, pageSize: Int): [Certificate!]!
+  badge(id: ID!): Badge
+  badges(page: Int, pageSize: Int): [Badge!]!
+
+  # Users & Org
+  user(id: ID!): User
+  users(
+    branchId: ID
+    groupId: ID
+    status: UserStatus
+    search: String
+    page: Int
+    pageSize: Int
+  ): UserConnection!
+  branch(id: ID!): Branch
+  branches(parentId: ID, page: Int, pageSize: Int): [Branch!]!
+  group(id: ID!): Group
+  groups(branchId: ID, page: Int, pageSize: Int): [Group!]!
+  manager(id: ID!): Manager
+  superAdmin(id: ID!): SuperAdmin
+
+  # Platform
+  domain(id: ID!): Domain
+  appConfig(domainId: ID!): AppConfig
+  language(id: ID!): Language
+  languages: [Language!]!
+  locale(id: ID!): Locale
+  customField(id: ID!): CustomField
+  customFields(appliesTo: String, page: Int, pageSize: Int): [CustomField!]!
+
+  # Reporting
+  report(id: ID!): Report
+  reports(type: ReportType, page: Int, pageSize: Int): [Report!]!
+  reportExport(id: ID!): ReportExport
+  dashboard(id: ID!): Dashboard
+  dashboards(page: Int, pageSize: Int): [Dashboard!]!
+  widget(id: ID!): Widget
+
+  # Integrations
+  integration(id: ID!): Integration
+  integrations(type: IntegrationType, page: Int, pageSize: Int): [Integration!]!
+  scorm(id: ID!): SCORM
+  xapi(id: ID!): xAPI
+  tincan(id: ID!): TinCan
+  aicc(id: ID!): AICC
+
+  # Security & Auth
+  webhook(id: ID!): Webhook
+  webhooks(page: Int, pageSize: Int): [Webhook!]!
+  webhookEvent(id: ID!): WebhookEvent
+  ssoConfig(domainId: ID!): SSOConfig
+  apiKey(id: ID!): APIKey
+  apiKeys(page: Int, pageSize: Int): [APIKey!]!
+
+  # Skills
+  skill(id: ID!): Skill
+  skills(categoryId: ID, page: Int, pageSize: Int): [Skill!]!
+  skillLevel(id: ID!): SkillLevel
+  competencyPath(id: ID!): CompetencyPath
+  competencyPaths(page: Int, pageSize: Int): [CompetencyPath!]!
+}
+
+# ─── Mutation Type ────────────────────────────────────────────────────────────
+
+type Mutation {
+  # Courses
+  createCourse(input: CreateCourseInput!): Course!
+  updateCourse(id: ID!, input: CreateCourseInput!): Course!
+  deleteCourse(id: ID!): Boolean!
+  publishCourse(id: ID!): Course!
+  archiveCourse(id: ID!): Course!
+
+  # Enrollments
+  enrollUser(input: EnrollUserInput!): Enrollment!
+  unenrollUser(enrollmentId: ID!): Boolean!
+  updateEnrollmentStatus(enrollmentId: ID!, status: EnrollmentStatus!): Enrollment!
+  completeEnrollment(enrollmentId: ID!): Enrollment!
+
+  # Users
+  createUser(input: UpdateUserInput!): User!
+  updateUser(id: ID!, input: UpdateUserInput!): User!
+  deleteUser(id: ID!): Boolean!
+  activateUser(id: ID!): User!
+  deactivateUser(id: ID!): User!
+
+  # Groups & Branches
+  addUserToGroup(userId: ID!, groupId: ID!): UserGroup!
+  removeUserFromGroup(userId: ID!, groupId: ID!): Boolean!
+  moveUserToBranch(userId: ID!, branchId: ID!): User!
+
+  # Assessments
+  submitTestAttempt(testId: ID!, answers: [ID!]!): TestAttempt!
+
+  # Reports
+  createReport(input: CreateReportInput!): Report!
+  deleteReport(id: ID!): Boolean!
+  exportReport(reportId: ID!, format: ExportFormat!): ReportExport!
+
+  # Badges & Certificates
+  awardBadge(userId: ID!, badgeId: ID!): Badge!
+  issueCertificate(enrollmentId: ID!): Certificate!
+  revokeCertificate(certificateId: ID!): Boolean!
+
+  # Webhooks
+  createWebhook(input: CreateWebhookInput!): Webhook!
+  updateWebhook(id: ID!, input: CreateWebhookInput!): Webhook!
+  deleteWebhook(id: ID!): Boolean!
+
+  # Skills
+  assignSkillToUser(userId: ID!, skillId: ID!, levelId: ID): UserSkill!
+  updateUserSkillLevel(userSkillId: ID!, levelId: ID!): UserSkill!
+}
+
+# ─── Subscription Type ────────────────────────────────────────────────────────
+
+type Subscription {
+  enrollmentStatusChanged(userId: ID): Enrollment!
+  courseCompleted(courseId: ID): Enrollment!
+  badgeAwarded(userId: ID): Badge!
+  certificateIssued(userId: ID): Certificate!
+  testAttemptCompleted(testId: ID): TestAttempt!
+  webhookEventDelivered(webhookId: ID!): WebhookEvent!
+  userProgressUpdated(courseId: ID, userId: ID): Progress!
+}
