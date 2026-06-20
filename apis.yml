@@ -5,7 +5,7 @@ description: Docebo is an AI-powered learning management system (LMS) platform p
   gamification data, and e-commerce transactions. It serves enterprise and mid-market
   organizations with 250+ learners across employee, customer, and partner training
   use cases.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/docebo/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -26,7 +26,7 @@ apis:
   description: RESTful API for managing all aspects of the Docebo learning platform
     including courses, users, enrollments, certifications, learning plans, reports,
     gamification, and e-commerce.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.docebo.com/docs/api-general-information
   baseURL: https://{domain}.docebosaas.com
   tags:
