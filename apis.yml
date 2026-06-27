@@ -74,7 +74,7 @@ common:
   url: https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/
 - type: Community
   url: https://community.docebo.com/integrations-apis-45
-- type: ProductUpdates
+- type: ReleaseNotes
   url: https://help.docebo.com/hc/en-us/articles/19807231971474-Product-updates
 - type: Plans
   url: plans/docebo-plans-pricing.yml
@@ -82,7 +82,7 @@ common:
   url: rate-limits/docebo-rate-limits.yml
 - type: FinOps
   url: finops/docebo-finops.yml
-- type: JSONLd
+- type: JSONLD
   url: json-ld/docebo.json
 - type: BlogPosts
   url: blogs/blogs.json
