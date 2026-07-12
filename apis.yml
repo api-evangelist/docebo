@@ -58,6 +58,8 @@ apis:
   - FN: Docebo Support
     url: https://help.docebo.com
 common:
+- type: DomainSecurity
+  url: security/docebo-domain-security.yml
 - type: Documentation
   url: https://developer.docebo.com/docs/api-general-information
 - type: Portal
