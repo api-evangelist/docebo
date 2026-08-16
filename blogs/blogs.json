@@ -90,12 +90,9 @@
     },
     {
       "source": "https://status.docebo.com",
-      "feed_url": "https://status.docebo.com",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "error": "HTTPError"
     }
   ],
   "post_count": 1,
-  "fetched": "2026-08-06T14:08:46Z"
+  "fetched": "2026-08-15T12:22:01Z"
 }
