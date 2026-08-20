@@ -43,6 +43,16 @@ apis:
   baseURL: https://{domain}.docebosaas.com
   tags:
   - Courses
+  - User
+  - Enrollments
+  - Certifications
+  - Learning Plans
+  - Reports
+  - Gamification
+  - E-Commerce
+  - Webhook
+  tags_raw:
+  - Courses
   - Users
   - Enrollments
   - Certifications
