@@ -91,6 +91,8 @@ apis:
   - FN: Docebo Support
     url: https://help.docebo.com
 common:
+- type: Website
+  url: https://www.docebo.com/
 - type: DomainSecurity
   url: security/docebo-domain-security.yml
 - type: Documentation
