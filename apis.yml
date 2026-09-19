@@ -39,6 +39,17 @@ tags:
 - E-Learning
 - Training
 - Courses
+- Certification
+- Gamification
+- Learning Plans
+- Human Resources
+- AI Learning
+tags_raw:
+- Learning Management System
+- LMS
+- E-Learning
+- Training
+- Courses
 - Certifications
 - Gamification
 - Learning Plans
@@ -55,8 +66,8 @@ apis:
   tags:
   - Courses
   - User
-  - Enrollments
-  - Certifications
+  - Enrollment
+  - Certification
   - Learning Plans
   - Reports
   - Gamification
