@@ -96,8 +96,6 @@ apis:
     url: https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls
   - type: Status
     url: https://status.docebo.com
-  - url: graphql/docebo-graphql.md
-    type: GraphQL
   contact:
   - FN: Docebo Support
     url: https://help.docebo.com
