@@ -82,11 +82,18 @@
   "repo": "docebo",
   "feeds": [
     {
-      "source": "https://status.docebo.com",
-      "feed_url": "https://status.docebo.com",
+      "source": "https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/",
+      "feed_url": "https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/feed/",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.docebo.com/feed/",
+      "feed_url": "https://www.docebo.com/feed/",
+      "title": "",
+      "saved": 1,
+      "method": "feed"
     },
     {
       "source": "https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/feed/",
@@ -94,10 +101,14 @@
       "title": "",
       "saved": 0,
       "method": "feed"
+    },
+    {
+      "source": "https://status.docebo.com",
+      "error": "HTTPError"
     }
   ],
-  "post_count": 1,
-  "fetched": "2026-10-03T12:30:02Z",
+  "post_count": 2,
+  "fetched": "2026-10-10T13:15:00Z",
   "feed_nature": "undetermined",
   "feed_nature_basis": null,
   "feed_nature_note": "Whether these posts are the vendor publishing or its support community, decided on the URL path grammar of the saved posts -- not the hostname, which carries both on Khoros, and not author diversity, which flags large vendor blogs as forums. 'undetermined' means undetermined."
