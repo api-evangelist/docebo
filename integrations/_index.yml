@@ -39,7 +39,7 @@
     - connectors/applications/docebo
     vendor_link: https://www.docebo.com/
     builder: Fivetran
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: docebo-microsoft-teams-own
   label: Microsoft Teams (own)
