@@ -1,0 +1,109 @@
+# Docebo
+
+> Knowledge base documentation for Docebo.
+
+## Docebo
+
+- [Webhooks](https://developer.docebo.com/docs/webhooks.md)
+- [Creating and managing webhooks](https://developer.docebo.com/docs/creating-and-managing-webhooks.md): Learn how to activate and manage webhooks in Docebo to enhance reporting, integrations, and data collection for your learning platform.
+- [Webhooks events](https://developer.docebo.com/docs/webhooks-events.md): Learn how to create and manage webhooks in Docebo to track events, collect data, and enhance your learning platform's reporting and integrations.
+- [Webhooks: Error management](https://developer.docebo.com/docs/webhooks-error-management.md): Learn how to manage Docebo webhooks, track errors, and enable notifications for seamless integration and data collection in your learning platform.
+- [Webhooks: Questions and answers](https://developer.docebo.com/docs/webhooks-questions-and-answers.md): Create webhooks in Docebo to trigger events, send data to URLs, and enhance reporting, integrations, and dashboards for your learning platform.
+- [Embedded learning](https://developer.docebo.com/docs/embedded-learning.md)
+- [Embedded learning](https://developer.docebo.com/docs/embedded-learning-1.md)
+- [Embedded learning building blocks](https://developer.docebo.com/docs/embedded-learning-building-blocks-1.md): Integrate Docebo's embedded learning widgets into your web pages for seamless, on-the-fly training experiences tailored to user needs.
+- [Configuring your site content security policy for embedded learning](https://developer.docebo.com/docs/configuring-your-site-content-security-policy-for-embedded-learning.md): Learn how to configure your site's content security policy for embedded learning on Docebo, enhancing user training experiences securely.
+- [Embedded learning for React web applications](https://developer.docebo.com/docs/embedded-learning-for-react-web-applications.md): Learn how to integrate Docebo's embedded learning in your React app with code examples and modules for a seamless training experience.
+- [Embedded learning building blocks](https://developer.docebo.com/docs/embedded-learning-building-blocks.md): Docebo’s Building Blocks let you inject modular training components—like course lists and players—into any external site. Using simple HTML and JS, these low-code elements deliver contextual learning without forcing users to leave their workflow.
+- [Embedded learning building blocks: Course list widget](https://developer.docebo.com/docs/embedded-learning-building-blocks-course-list-widget.md): Enhance your Docebo platform with embedded learning building blocks, offering modular training and seamless integration for a dynamic learning experience.
+- [Embedded learning building blocks: My courses and learning plans widget](https://developer.docebo.com/docs/embedded-learning-building-blocks-my-courses-and-learning-plans-widget.md): This article details the "My courses and learning plans" widget for Docebo embedded learning, covering HTML tags, attributes, and JavaScript commands for integration.
+- [Embedded learning building blocks: Course player widget](https://developer.docebo.com/docs/embedded-learning-building-blocks-course-player-widget.md)
+- [Embedded learning building blocks: Single asset player widget](https://developer.docebo.com/docs/embedded-learning-building-blocks-single-asset-player-widget.md)
+- [Embedded learning building blocks versions and release history](https://developer.docebo.com/docs/embedded-learning-building-blocks-versions-and-release-history.md)
+- [Mobile SDK](https://developer.docebo.com/docs/mobile-sdk.md): Docebo’s Mobile SDK enables you to integrate full learning experiences into your own iOS and Android apps. It provides the technical framework to embed platform instances, allowing users to access training on the go without leaving your native app.
+- [Embedded learning in your mobile application](https://developer.docebo.com/docs/embedded-learning-mobile-sdk.md): Integrate Docebo's embedded learning SDK into your mobile app for seamless training experiences on iOS, Android, or React Native.
+- [Embedded learning for iOS](https://developer.docebo.com/docs/embedded-learning-for-ios.md): Integrate Docebo's embedded learning SDK into your iOS app for seamless training experiences, enhancing user engagement and learning on the go.
+- [Embedded learning for Android](https://developer.docebo.com/docs/embedded-learning-for-android.md): Integrate Docebo's embedded learning Mobile SDK into your Android app for seamless, on-the-fly training experiences without login interruptions.
+- [Embedded learning for React Native](https://developer.docebo.com/docs/embedded-learning-for-react-native.md): Integrate Docebo's embedded learning Mobile SDK into your React Native app for seamless training experiences without login interruptions.
+- [Docebo Connect](https://developer.docebo.com/docs/docebo-connect.md)
+- [Docebo Connect](https://developer.docebo.com/docs/docebo-connect-1.md): Integrate your platform with over 400 SaaS systems using Docebo Connect, streamlining workflows and data sharing effortlessly.
+- [Docebo Connect: Glossary of terms](https://developer.docebo.com/docs/docebo-connect-glossary-of-terms.md): Integrate your platform with over 400 SaaS systems using Docebo Connect, simplifying workflows and data sharing through powerful connectors and triggers.
+- [Docebo Connect: Working with recipes](https://developer.docebo.com/docs/docebo-connect-working-with-recipes.md): Integrate your platform with over 400 SaaS systems using Docebo Connect, streamline workflows, and manage recipes effortlessly.
+- [Docebo Connect: Copying recipes](https://developer.docebo.com/docs/docebo-connect-usage-copying-recipes.md): Integrate your platform with over 400 SaaS systems using Docebo Connect. Learn to clone and customize recipes for seamless data sharing and automation.
+- [Docebo Connect: Working with data tables](https://developer.docebo.com/docs/docebo-connect-working-with-data-tables.md): Integrate your platform with over 400 SaaS systems using Docebo Connect, enhancing workflows and managing data tables efficiently.
+- [Docebo Connect: Test case functionality](https://developer.docebo.com/docs/docebo-connect-test-case-functionality.md)
+- [Docebo Connect: External IDs Connector](https://developer.docebo.com/docs/docebo-connect-external-id-connector.md)
+- [Connect recipes](https://developer.docebo.com/docs/connect-recipes.md): Comprehensive collection of Docebo Connect integration articles documenting automated workflows for synchronizing users, data, and events across HR systems, calendars, credentials platforms, and third-party applications.
+- [Docebo Connect for Google Calendar](https://developer.docebo.com/docs/docebo-connect-for-google-calendar.md)
+- [Docebo Connect for Microsoft Outlook 365 Calendar](https://developer.docebo.com/docs/docebo-connect-for-microsoft-outlook-365-calendar.md)
+- [Docebo Connect for Microsoft Entra ID (Azure AD)](https://developer.docebo.com/docs/docebo-connect-for-microsoft-entra-id-azure-ad.md)
+- [Docebo Connect for Amazon S3](https://developer.docebo.com/docs/docebo-connect-for-amazon-s3.md)
+- [Docebo Connect for Ceridian Dayforce](https://developer.docebo.com/docs/docebo-connect-for-ceridian-dayforce.md)
+- [Docebo Connect for BambooHR](https://developer.docebo.com/docs/docebo-connect-for-bamboohr.md)
+- [Docebo Connect for HiBob](https://developer.docebo.com/docs/docebo-connect-for-hibob.md)
+- [Docebo Connect for HubSpot](https://developer.docebo.com/docs/docebo-connect-for-hubspot.md)
+- [Docebo Connect for Okta](https://developer.docebo.com/docs/docebo-connect-for-okta.md)
+- [Docebo Connect for Edcast LXP](https://developer.docebo.com/docs/docebo-connect-for-edcast-lxp.md)
+- [Docebo Connect for Udemy Business](https://developer.docebo.com/docs/docebo-connect-for-udemy-business.md)
+- [Docebo Connect for ReadyTech Axis](https://developer.docebo.com/docs/docebo-connect-for-readytech-axis.md)
+- [Docebo Connect for ADP Workforce Now](https://developer.docebo.com/docs/docebo-connect-for-adp-workforce-now.md)
+- [Docebo Connect for Workday](https://developer.docebo.com/docs/docebo-connect-for-workday.md)
+- [Docebo Connect for user anonymization](https://developer.docebo.com/docs/docebo-connect-for-user-anonymization.md)
+- [Docebo Connect for Qualtrics](https://developer.docebo.com/docs/docebo-connect-for-qualtrics.md)
+- [Docebo Connect for Credly](https://developer.docebo.com/docs/docebo-connect-for-credly.md)
+- [Docebo Connect for Accredible](https://developer.docebo.com/docs/docebo-connect-for-accredible.md)
+- [Docebo Connect Enablement Labs folder recipes](https://developer.docebo.com/docs/docebo-connect-enablement-labs-folder-recipes.md)
+- [Docebo Connect integration changelog](https://developer.docebo.com/docs/docebo-connect-integration-changelog.md)
+- [Connector](https://developer.docebo.com/docs/connector.md)
+- [Connector: Enrollments](https://developer.docebo.com/docs/docebo-connect-connector-enrollments.md): Explore Docebo Connect's enrollment actions for managing user enrollments in courses and sessions, including options for filtering and batch updates.
+- [Connector: Users](https://developer.docebo.com/docs/connector-users.md)
+- [API guides](https://developer.docebo.com/docs/api-guides.md)
+- [Activating and managing the API and SSO app](https://developer.docebo.com/docs/activating-and-managing-the-api-and-sso-app.md): Configure SSO and API in Docebo with OAuth2 for secure access. Learn to manage settings, create apps, and integrate third-party systems seamlessly.
+- [API general information](https://developer.docebo.com/docs/api-general-information.md): Connect and automate with Docebo APIs to manage users, courses, and data seamlessly. Explore the API browser for easy integration and testing.
+- [APIs authentication](https://developer.docebo.com/docs/apis-authentication.md): Learn how to authenticate with Docebo APIs using OAuth 2.0, access tokens, and JWT for secure access to your LMS data.
+- [Get started with the Docebo API browser](https://developer.docebo.com/docs/get-started-with-the-docebo-api-browser.md): Access the Docebo API browser to explore interactive documentation, authenticate, and test API calls on your platform's data effortlessly.
+- [Send your first requests using the API browser](https://developer.docebo.com/docs/send-your-first-requests-using-the-api-browser.md): Learn to make API requests using the Docebo API browser, including authentication, required parameters, and body parameters for effective data handling.
+- [Overview of API services and endpoints](https://developer.docebo.com/docs/overview-of-api-services-and-endpoints.md): Explore the Docebo API browser to manage users, reports, and learning content with detailed endpoint guidance for effective platform interaction.
+- [API essentials - Retrieving IDs](https://developer.docebo.com/docs/api-essentials-retrieving-ids.md): Learn how to retrieve unique IDs like user, course, and catalog IDs for API actions on the platform, enhancing your data access and management.
+- [API browser technical information](https://developer.docebo.com/docs/api-browser-technical-information.md): Learn how to effectively use API browser endpoints, manage dynamic fields, and test API calls for user management and course enrollment.
+- [Deprecated and changed API calls](https://developer.docebo.com/docs/deprecated-and-changed-api-calls.md): Explore Docebo's API updates, including deprecated calls and changes since January 2023, to enhance your learning platform integration and performance.
+- [Supplemental information for API call POST ⧸learn⧸v1⧸lo⧸﹛id﹜⧸track](https://developer.docebo.com/docs/supplemental-information-for-api-call-post-learnv1loidtrack.md): Explore the inputs and outputs for the POST /learn/v1/lo//track endpoint, detailing tracking types for assignments, quizzes, surveys, and more.
+- [Best practices for handling API rate limits and 429 errors](https://developer.docebo.com/docs/best-practices-for-handling-api-rate-limits-and-429-errors.md): Guide to API rate limits and 429 errors. Details the token bucket model and mandates exponential backoff with jitter to avoid synchronized bursts and ensure stability.
+- [Artificial intelligence](https://developer.docebo.com/docs/artificial-intelligence.md)
+- [Configuring the Docebo MCP server](https://developer.docebo.com/docs/configuring-the-docebo-mcp-server.md)
+- [Supported MCP tools](https://developer.docebo.com/docs/supported-mcp-tools.md)
+
+## v1-api (API Reference)
+
+- [/notification/registration/v1/attachment](https://developer.docebo.com/apidocs/notificationregistrationv1attachment.md)
+- [/notification/registration/v1/metas](https://developer.docebo.com/apidocs/notificationregistrationv1metas.md)
+- [/notification/registration/v1/metas/count](https://developer.docebo.com/apidocs/notificationregistrationv1metascount.md)
+- [/notification/registration/v1/meta/{notificationMetaId}](https://developer.docebo.com/apidocs/notificationregistrationv1metanotificationmetaid.md)
+- [/notification/registration/v1/meta/{notificationMetaId}](https://developer.docebo.com/apidocs/notificationregistrationv1metanotificationmetaid-1.md)
+- [/notification/registration/v1/meta/{notificationMetaId}](https://developer.docebo.com/apidocs/notificationregistrationv1metanotificationmetaid-2.md)
+- [/notification/registration/v1/meta](https://developer.docebo.com/apidocs/notificationregistrationv1meta.md)
+- [/notification/registration/v1/notification_groups](https://developer.docebo.com/apidocs/notificationregistrationv1notification-groups.md)
+- [/notification/registration/v1/notification_groups/count](https://developer.docebo.com/apidocs/notificationregistrationv1notification-groupscount.md)
+- [/notification/registration/v1/notification_group/{notificationGroupId}](https://developer.docebo.com/apidocs/notificationregistrationv1notification-groupnotificationgroupid.md)
+- [/notification/registration/v1/notification_group/{notificationGroupId}](https://developer.docebo.com/apidocs/notificationregistrationv1notification-groupnotificationgroupid-1.md)
+- [/notification/registration/v1/notification_group/{notificationGroupId}](https://developer.docebo.com/apidocs/notificationregistrationv1notification-groupnotificationgroupid-2.md)
+- [/notification/registration/v1/notification_group](https://developer.docebo.com/apidocs/notificationregistrationv1notification-group.md)
+- [/notification/registration/v1/presigned_url/renew](https://developer.docebo.com/apidocs/notificationregistrationv1presigned-urlrenew.md)
+- [/notification/registration/v1/products](https://developer.docebo.com/apidocs/notificationregistrationv1products.md)
+- [/notification/registration/v1/products/count](https://developer.docebo.com/apidocs/notificationregistrationv1productscount.md)
+- [/notification/registration/v1/product/{productCode}](https://developer.docebo.com/apidocs/notificationregistrationv1productproductcode.md)
+- [/notification/registration/v1/product/{productCode}](https://developer.docebo.com/apidocs/notificationregistrationv1productproductcode-1.md)
+- [/notification/registration/v1/product/{productCode}](https://developer.docebo.com/apidocs/notificationregistrationv1productproductcode-2.md)
+- [/notification/registration/v1/product](https://developer.docebo.com/apidocs/notificationregistrationv1product.md)
+- [/scheduler/v1/schedule](https://developer.docebo.com/apidocs/schedulerv1schedule.md)
+- [/notification/registration/v1/notification_setup/{notificationSetupId}](https://developer.docebo.com/apidocs/notificationregistrationv1notification-setupnotificationsetupid.md)
+- [/notification/registration/v1/{notificationMetaId}/template](https://developer.docebo.com/apidocs/notificationregistrationv1notificationmetaidtemplate.md)
+- [/notification/registration/v1/{notificationMetaId}/template](https://developer.docebo.com/apidocs/notificationregistrationv1notificationmetaidtemplate-1.md)
+- [/notification/registration/v1/{notificationMetaId}/template](https://developer.docebo.com/apidocs/notificationregistrationv1notificationmetaidtemplate-2.md)
+- [/notification/registration/v1/{notificationMetaId}/template/count](https://developer.docebo.com/apidocs/notificationregistrationv1notificationmetaidtemplatecount.md)
+- [/notification/registration/v1/template/{notificationMetaTemplateId}](https://developer.docebo.com/apidocs/notificationregistrationv1templatenotificationmetatemplateid.md)
+- [/notification/registration/v1/template/{notificationMetaTemplateId}](https://developer.docebo.com/apidocs/notificationregistrationv1templatenotificationmetatemplateid-1.md)
+- [/notification/registration/v1/notification/visibility/batch](https://developer.docebo.com/apidocs/notificationregistrationv1notificationvisibilitybatch.md)
+- [/notification/registration/v1/notification/visibility/{notificationSetupId}](https://developer.docebo.com/apidocs/notificationregistrationv1notificationvisibilitynotificationsetupid.md)
+- [/notification/registration/v1/notification/visibility/{notificationSetupId}/user/{userId}](https://developer.docebo.com/apidocs/notificationregistrationv1notificationvisibilitynotificationsetupiduseruserid.md)
+- [/notification/registration/v1/notification/visibility/user/{userId}](https://developer.docebo.com/apidocs/notificationregistrationv1notificationvisibilityuseruserid.md)

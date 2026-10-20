@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/docebo/main/json-schema/docebo-post-learn-v1-enrollments-courseid-userid-request-schema.json",
+  "title": "PostLearnV1EnrollmentsCourseidUseridRequest",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1EnrollmentsCourseidUseridRequest",
+  "type": "object",
+  "properties": {
+    "User ID": {
+      "type": "integer",
+      "description": "The user ID to enroll"
+    },
+    "Course ID": {
+      "type": "integer",
+      "description": "The ID of the course in which the user will be enrolled"
+    },
+    "Level": {
+      "type": "integer",
+      "description": "The user level. Possible values allowed are: 3 for student, 4 for tutor, 6 for instructor"
+    },
+    "Date begin validity": {
+      "type": "string",
+      "description": "The start date of the enrollment"
+    },
+    "Date end validity": {
+      "type": "string",
+      "description": "The expiration date of the enrollment"
+    },
+    "Enrollment fields": {
+      "type": "object",
+      "description": "Custom fields related to the enrollment (dynamic fields are shown here)"
+    }
+  },
+  "required": [
+    "User ID",
+    "Course ID"
+  ]
+}

@@ -1,0 +1,160 @@
+name: Docebo MCP server
+generated: '2026-10-20'
+method: searched
+source: https://developer.docebo.com/docs/supported-mcp-tools
+status: beta
+description: Docebo hosts an MCP server per platform (built-in Learner server plus custom servers configured by admins) that ChatGPT, Claude, Copilot Studio and Gemini Enterprise connect to via OAuth.
+deployment:
+  mode: remote
+  endpoint: https://[docebo-instance-name]/mcp/servers/[server-path]/http
+  auth: oauth
+  verified: searched
+  note: Endpoint is templated per customer platform, verbatim from https://developer.docebo.com/docs/configuring-the-docebo-mcp-server; tool names are documented, not observed from a live tools/list.
+docs:
+- https://developer.docebo.com/docs/configuring-the-docebo-mcp-server
+- https://developer.docebo.com/docs/supported-mcp-tools
+- https://help.docebo.com/hc/en-us/articles/34309439408530-Using-the-Docebo-MCP-server-beta
+tools_evidence: table
+tools:
+- name: Get my learning enrollments
+  category: Learning
+  description: Shows the user’s enrolled and completed courses and learning plans, the same information available on *My activities* page. Learn more about My activities (opens in a new tab).
+  lookup_tools: None
+- name: Get my learning certifications
+  category: Learning
+  description: Shows the user’s active certifications, the skills they cover, when they were issued, and when they expire or need renewal, the same information available on the *My activities* page. Learn
+    more about My activities (opens in a new tab).
+  lookup_tools: None
+- name: Search learning items
+  category: Learning
+  description: Finds courses, learning plans, and other learning content available to the user on the platform. Uses the same engine as the platform's global search. Learn more about global search (opens
+    in a new tab).
+  lookup_tools: None
+- name: Fetch learning item
+  category: Learning
+  description: Reads the content of a specific course, learning plan, or training material so the AI assistant can answer questions about it or generate a summary. Uses the same parsing engine as Docebo’s
+    AI assistant; the same content and visibility limitations apply. Learn more about Docebo’s AI assistant (opens in a new tab). Support for assets will be available in a future release.
+  lookup_tools: Search learning items
+- name: Play learning item
+  category: Learning
+  description: Opens a selected learning item directly in the AI assistant, allowing the user to launch and consume it without leaving the conversation. This tool uses MCP Apps technology and requires an
+    MCP client that supports MCP Apps and embedded iframes. It has been tested in ChatGPT on the browser and desktop app. Claude is not currently compatible because it blocks the embedded iframes required
+    by this experience. Other MCP clients that meet these requirements may work, but have not been tested by Docebo. This tool is not included in the built-in Learner server and must be enabled on a custom
+    MCP server.
+  lookup_tools: Search learning items
+- name: Search users
+  category: Shared lookups
+  description: Finds users by name or email. Required by other tools that act on a specific user.
+  lookup_tools: None
+- name: Search groups
+  category: Shared lookups
+  description: Finds groups by name. Required by tools that act on a specific group.
+  lookup_tools: None
+- name: Search branches
+  category: Shared lookups
+  description: Finds branches by name. Required by tools that act on a specific branch.
+  lookup_tools: None
+- name: Search learning items for admins
+  category: Shared lookups
+  description: Finds courses, learning plans, assets, and training materials by name. Required by other tools that act on a specific learning item.
+  lookup_tools: None
+- name: Get learning item details
+  category: Courses and learning plans
+  description: Retrieves detailed information about a specific course or learning plan, including its title, status, short description, and full description.
+  lookup_tools: Search learning items for admins
+- name: Create learning item
+  category: Courses and learning plans
+  description: Creates a new course or learning plan. The AI assistant can suggest a title and description based on the topic you provide.
+  lookup_tools: None
+- name: Update learning item
+  category: Courses and learning plans
+  description: Updates the title, description, and publication status of an existing course or learning plan.
+  lookup_tools: Search learning items for admins
+- name: Assign courses to learning plan
+  category: Courses and learning plans
+  description: Adds one or more courses to an existing learning plan.
+  lookup_tools: Search learning items for admins
+- name: Assign training materials to course
+  category: Courses and learning plans
+  description: Adds one or more training materials to an existing course.
+  lookup_tools: Search learning items for admins
+- name: Get user enrollments
+  category: Enrollments
+  description: Shows all enrollments for a specific user, including status and progress.
+  lookup_tools: Search users
+- name: Get learning item enrollments
+  category: Enrollments
+  description: Shows who is enrolled in a specific course or learning plan.
+  lookup_tools: Search learning items for admins
+- name: Enroll user
+  category: Enrollments
+  description: Enrolls a specific user in a course or learning plan.
+  lookup_tools: Search users, Search learning items for admins
+- name: Unenroll user
+  category: Enrollments
+  description: Removes a specific user from a course or learning plan.
+  lookup_tools: Search users, Search learning items for admins
+- name: Archive user enrollment
+  category: Enrollments
+  description: Archives a user's enrollment. Optionally resets their progress, for example before re-enrolling them.
+  lookup_tools: Search users, Search learning items for admins
+- name: Enroll group or branch
+  category: Enrollments
+  description: Enrolls all members of a group or branch in a course or learning plan at once.
+  lookup_tools: Search groups, Search branches, Search learning items for admins
+- name: Ask learning data insights
+  category: Insights
+  description: Answers natural-language questions about learning data, including enrollments, completions, learning plans, and time spent on learning.
+  lookup_tools: None
+- name: Get marketplace facets
+  category: Content marketplace
+  description: Returns the available publishers, topics, skills, languages, formats, certifications, accessibility standards, and other filter values available in the Content Marketplace.
+  lookup_tools: None
+- name: Search unimported marketplace courses
+  category: Content marketplace
+  description: Searches the Content Marketplace catalog for courses matching the specified criteria. Returns only courses that have not yet been imported into the platform.
+  lookup_tools: Get marketplace facets
+- name: Get marketplace course details
+  category: Content marketplace
+  description: Retrieves detailed information about one or more marketplace courses, including learning objectives, skills, languages, certifications, accessibility standards, and other metadata.
+  lookup_tools: Search unimported marketplace courses
+- name: Create marketplace collection
+  category: Content marketplace
+  description: Creates a new marketplace collection and can optionally add selected courses to it.
+  lookup_tools: Search unimported marketplace courses
+- name: Add courses to marketplace collection
+  category: Content marketplace
+  description: Adds one or more marketplace courses to an existing marketplace collection.
+  lookup_tools: Search unimported marketplace courses
+- name: Import marketplace courses
+  category: Content marketplace
+  description: Imports one or more marketplace courses into the platform.
+  lookup_tools: Search unimported marketplace courses
+- name: Search marketplace collections
+  category: Content marketplace
+  description: Finds marketplace collections available in the platform.
+  lookup_tools: None
+- name: Get marketplace collection courses
+  category: Content marketplace
+  description: Lists the marketplace courses included in a specific marketplace collection.
+  lookup_tools: Search marketplace collections
+- name: Remove courses from marketplace collection
+  category: Content marketplace
+  description: Removes one or more courses from an existing marketplace collection.
+  lookup_tools: Search marketplace collections
+- name: Delete marketplace collection
+  category: Content marketplace
+  description: Permanently deletes a marketplace collection.
+  lookup_tools: Search marketplace collections
+- name: Get retiring marketplace courses with replacements
+  category: Content marketplace
+  description: Finds imported marketplace courses that are retiring and suggests replacement courses when available.
+  lookup_tools: None
+- name: Search marketplace content provider collections
+  category: Content marketplace
+  description: Finds curated collections published by marketplace content providers.
+  lookup_tools: None
+- name: Get marketplace content provider collection courses
+  category: Content marketplace
+  description: Lists the courses included in a marketplace content provider collection.
+  lookup_tools: Search marketplace content provider collections

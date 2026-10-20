@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/docebo/main/json-schema/docebo-post-learn-v1-lo-id-track-response-schema.json",
+  "title": "PostLearnV1LoIdTrackResponse",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1LoIdTrackResponse",
+  "type": "object",
+  "properties": {
+    "acknowledge": {
+      "type": "object",
+      "description": "Acknowledgment response object"
+    },
+    "id": {
+      "type": "integer",
+      "description": "The internal ID of the submitted item (returned only when type is submission)"
+    },
+    "url": {
+      "type": "string",
+      "description": "The URL of the S3 file or Google Drive file"
+    },
+    "content": {
+      "type": "string",
+      "description": "The HTML content to display"
+    },
+    "questions": {
+      "type": "array",
+      "description": "An array of questions for the requested page"
+    },
+    "page_number": {
+      "type": "integer",
+      "description": "The page number, returned only if there is a previous or next page"
+    },
+    "user_status": {
+      "type": "object",
+      "description": "The user status information for the current test"
+    },
+    "status": {
+      "type": "string",
+      "description": "The current quiz status for this user"
+    },
+    "score": {
+      "type": "number",
+      "description": "The current calculated score for the user"
+    },
+    "evaluation_status": {
+      "type": "string",
+      "description": "If status is submitted, this contains the evaluation status"
+    },
+    "completion_status": {
+      "type": "string",
+      "description": "The completion status"
+    },
+    "suspension_time": {
+      "type": "integer",
+      "description": "How many minutes the user should wait before the test is unsuspended"
+    },
+    "time_consumed": {
+      "type": "string",
+      "description": "Tracks the amount of time consumed by the user"
+    },
+    "attempts_consumed": {
+      "type": "integer",
+      "description": "Tracks the number of attempts consumed by the user"
+    },
+    "feedback_message": {
+      "type": "string",
+      "description": "An optional message that depends on the actual user score"
+    },
+    "score_per_category": {
+      "type": "array",
+      "description": "An optional array containing the calculated scores divided by category"
+    },
+    "average_user_score": {
+      "type": "number",
+      "description": "The average score of other users who have already completed the test"
+    },
+    "show_results": {
+      "type": "boolean",
+      "description": "Returns TRUE if the results should be displayed, otherwise returns FALSE"
+    },
+    "is_completed": {
+      "type": "boolean",
+      "description": "Returns TRUE if the question is completed, otherwise returns FALSE"
+    }
+  }
+}

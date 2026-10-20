@@ -1,0 +1,390 @@
+{
+  "@context": {
+    "@vocab": "https://docebo.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "docebo": "https://docebo.com/schema#",
+    "GetAnalyticsV1CustomReportTypesResponse": "docebo:GetAnalyticsV1CustomReportTypesResponse",
+    "id": {
+      "@id": "docebo:id",
+      "@type": "xsd:string"
+    },
+    "GetAnalyticsV1CustomReportTypesActiveResponse": "docebo:GetAnalyticsV1CustomReportTypesActiveResponse",
+    "GetAnalyticsV1ReportsResponse": "docebo:GetAnalyticsV1ReportsResponse",
+    "GetAudiencesV1AudienceResponse": "docebo:GetAudiencesV1AudienceResponse",
+    "uuid": {
+      "@id": "docebo:uuid",
+      "@type": "xsd:string"
+    },
+    "GetAudiencesV1AudienceIdGroupToAudienceResponse": "docebo:GetAudiencesV1AudienceIdGroupToAudienceResponse",
+    "GetAudiencesV1AudienceUuidAudienceToGroupResponse": "docebo:GetAudiencesV1AudienceUuidAudienceToGroupResponse",
+    "GetCourseV1CoursesResponse": "docebo:GetCourseV1CoursesResponse",
+    "GetCourseV1CoursesIdResponse": "docebo:GetCourseV1CoursesIdResponse",
+    "data.ecommerce_options": {
+      "@id": "docebo:data.ecommerce_options",
+      "@type": "xsd:string"
+    },
+    "PutCourseV1CoursesIdRequest": "docebo:PutCourseV1CoursesIdRequest",
+    "ecommerce_options": {
+      "@id": "docebo:ecommerce_options",
+      "@type": "xsd:string"
+    },
+    "GetCourseV1SessionsSessionidEventsResponse": "docebo:GetCourseV1SessionsSessionidEventsResponse",
+    "GetCourseV1ThumbnailsResponse": "docebo:GetCourseV1ThumbnailsResponse",
+    "GetLearnV1CatalogContentInternalResponse": "docebo:GetLearnV1CatalogContentInternalResponse",
+    "item_price": {
+      "@id": "docebo:item_price",
+      "@type": "xsd:string"
+    },
+    "affiliate_price": {
+      "@id": "docebo:affiliate_price",
+      "@type": "xsd:string"
+    },
+    "prices": {
+      "@id": "docebo:prices",
+      "@type": "xsd:string"
+    },
+    "GetLearnV1CatalogContentInternalCatalogidResponse": "docebo:GetLearnV1CatalogContentInternalCatalogidResponse",
+    "GetLearnV1CatalogContentPublicResponse": "docebo:GetLearnV1CatalogContentPublicResponse",
+    "GetLearnV1CatalogContentPublicCatalogidResponse": "docebo:GetLearnV1CatalogContentPublicCatalogidResponse",
+    "GetLearnV1CoursesResponse": "docebo:GetLearnV1CoursesResponse",
+    "currency_prices": {
+      "@id": "docebo:currency_prices",
+      "@type": "xsd:string"
+    },
+    "price": {
+      "@id": "docebo:price",
+      "@type": "xsd:string"
+    },
+    "PostLearnV1CoursesRequest": "docebo:PostLearnV1CoursesRequest",
+    "PostLearnV1CoursesBatchRequest": "docebo:PostLearnV1CoursesBatchRequest",
+    "course_for_sale": {
+      "@id": "docebo:course_for_sale",
+      "@type": "xsd:string"
+    },
+    "course_price": {
+      "@id": "docebo:course_price",
+      "@type": "xsd:string"
+    },
+    "content_partner_code": {
+      "@id": "docebo:content_partner_code",
+      "@type": "xsd:string"
+    },
+    "content_partner_fields": {
+      "@id": "docebo:content_partner_fields",
+      "@type": "xsd:string"
+    },
+    "field_XX": {
+      "@id": "docebo:field_XX",
+      "@type": "xsd:string"
+    },
+    "GetLearnV1CoursesCourseidByCategoryResponse": "docebo:GetLearnV1CoursesCourseidByCategoryResponse",
+    "DeleteLearnV1EnrollmentCourseidUseridResponse": "docebo:DeleteLearnV1EnrollmentCourseidUseridResponse",
+    "DeleteLearnV1EnrollmentsResponse": "docebo:DeleteLearnV1EnrollmentsResponse",
+    "Unenrolled": {
+      "@id": "docebo:Unenrolled",
+      "@container": "@list"
+    },
+    "PostLearnV1EnrollmentsResponse": "docebo:PostLearnV1EnrollmentsResponse",
+    "notification_ids": {
+      "@id": "docebo:notification_ids",
+      "@container": "@list"
+    },
+    "PostLearnV1EnrollmentsCourseidUseridRequest": "docebo:PostLearnV1EnrollmentsCourseidUseridRequest",
+    "Level": {
+      "@id": "docebo:Level",
+      "@type": "xsd:integer"
+    },
+    "PostLearnV1EnrollmentsCourseidUseridResponse": "docebo:PostLearnV1EnrollmentsCourseidUseridResponse",
+    "Enrolled": {
+      "@id": "docebo:Enrolled",
+      "@container": "@list"
+    },
+    "Waiting": {
+      "@id": "docebo:Waiting",
+      "@type": "xsd:boolean"
+    },
+    "PostLearnV1LoIdTrackRequest": "docebo:PostLearnV1LoIdTrackRequest",
+    "type": {
+      "@id": "docebo:type",
+      "@type": "xsd:string"
+    },
+    "submission": {
+      "@id": "docebo:submission"
+    },
+    "learner_reply": {
+      "@id": "docebo:learner_reply",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "docebo:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "docebo:description",
+      "@type": "xsd:string"
+    },
+    "files": {
+      "@id": "docebo:files",
+      "@container": "@list"
+    },
+    "video_url": {
+      "@id": "docebo:video_url",
+      "@type": "xsd:string"
+    },
+    "action": {
+      "@id": "docebo:action",
+      "@type": "xsd:string"
+    },
+    "questions": {
+      "@id": "docebo:questions"
+    },
+    "user_status": {
+      "@id": "docebo:user_status"
+    },
+    "answer": {
+      "@id": "docebo:answer",
+      "@type": "xsd:integer"
+    },
+    "answers": {
+      "@id": "docebo:answers"
+    },
+    "bookmark": {
+      "@id": "docebo:bookmark",
+      "@type": "xsd:integer"
+    },
+    "complete": {
+      "@id": "docebo:complete",
+      "@type": "xsd:boolean"
+    },
+    "submitted": {
+      "@id": "docebo:submitted",
+      "@type": "xsd:boolean"
+    },
+    "PostLearnV1LoIdTrackResponse": "docebo:PostLearnV1LoIdTrackResponse",
+    "acknowledge": {
+      "@id": "docebo:acknowledge"
+    },
+    "url": {
+      "@id": "docebo:url",
+      "@type": "xsd:string"
+    },
+    "content": {
+      "@id": "docebo:content",
+      "@type": "xsd:string"
+    },
+    "page_number": {
+      "@id": "docebo:page_number",
+      "@type": "xsd:integer"
+    },
+    "status": {
+      "@id": "docebo:status",
+      "@type": "xsd:string"
+    },
+    "score": {
+      "@id": "docebo:score",
+      "@type": "xsd:decimal"
+    },
+    "evaluation_status": {
+      "@id": "docebo:evaluation_status",
+      "@type": "xsd:string"
+    },
+    "completion_status": {
+      "@id": "docebo:completion_status",
+      "@type": "xsd:string"
+    },
+    "suspension_time": {
+      "@id": "docebo:suspension_time",
+      "@type": "xsd:integer"
+    },
+    "time_consumed": {
+      "@id": "docebo:time_consumed",
+      "@type": "xsd:string"
+    },
+    "attempts_consumed": {
+      "@id": "docebo:attempts_consumed",
+      "@type": "xsd:integer"
+    },
+    "feedback_message": {
+      "@id": "docebo:feedback_message",
+      "@type": "xsd:string"
+    },
+    "score_per_category": {
+      "@id": "docebo:score_per_category",
+      "@container": "@list"
+    },
+    "average_user_score": {
+      "@id": "docebo:average_user_score",
+      "@type": "xsd:decimal"
+    },
+    "show_results": {
+      "@id": "docebo:show_results",
+      "@type": "xsd:boolean"
+    },
+    "is_completed": {
+      "@id": "docebo:is_completed",
+      "@type": "xsd:boolean"
+    },
+    "GetLearnV1LpLpidResponse": "docebo:GetLearnV1LpLpidResponse",
+    "GetLearnV1SubPlanResponse": "docebo:GetLearnV1SubPlanResponse",
+    "PostLearnV1SubPlanRequest": "docebo:PostLearnV1SubPlanRequest",
+    "PostLearnV1SubPlanResponse": "docebo:PostLearnV1SubPlanResponse",
+    "data.prices": {
+      "@id": "docebo:data.prices",
+      "@type": "xsd:string"
+    },
+    "PostLearnV1SubPlanBatchRequest": "docebo:PostLearnV1SubPlanBatchRequest",
+    "GetLearnV1SubPlanPlanidResponse": "docebo:GetLearnV1SubPlanPlanidResponse",
+    "PutLearnV1SubPlanPlanidRequest": "docebo:PutLearnV1SubPlanPlanidRequest",
+    "PutLearnV1SubPlanPlanidResponse": "docebo:PutLearnV1SubPlanPlanidResponse",
+    "GetLearnV1SubRecordResponse": "docebo:GetLearnV1SubRecordResponse",
+    "PostLearnV1SubRecordRequest": "docebo:PostLearnV1SubRecordRequest",
+    "GetLearnV1SubRecordIdrecordResponse": "docebo:GetLearnV1SubRecordIdrecordResponse",
+    "data.subscription_record.price.currency": {
+      "@id": "docebo:data.subscription_record.price.currency",
+      "@type": "xsd:string"
+    },
+    "data.subscription_record.price.value": {
+      "@id": "docebo:data.subscription_record.price.value",
+      "@type": "xsd:string"
+    },
+    "PutLearnV1SubRecordIdrecordRequest": "docebo:PutLearnV1SubRecordIdrecordRequest",
+    "PostLearningplanV1LearningplansRequest": "docebo:PostLearningplanV1LearningplansRequest",
+    "PutLearningplanV1LearningplansLearningplanidRequest": "docebo:PutLearningplanV1LearningplansLearningplanidRequest",
+    "GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen": "docebo:GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen",
+    "Items": {
+      "@id": "docebo:Items",
+      "@container": "@list"
+    },
+    "Username": {
+      "@id": "docebo:Username",
+      "@type": "xsd:string"
+    },
+    "Count": {
+      "@id": "docebo:Count",
+      "@type": "xsd:integer"
+    },
+    "Cursor": {
+      "@id": "docebo:Cursor",
+      "@type": "xsd:string"
+    },
+    "Sort": {
+      "@id": "docebo:Sort",
+      "@container": "@list"
+    },
+    "GetManageV1EnrollmentRulesResponse": "docebo:GetManageV1EnrollmentRulesResponse",
+    "GetManageV1EnrollmentRulesEnrollmentruleidResponse": "docebo:GetManageV1EnrollmentRulesEnrollmentruleidResponse",
+    "GetManageV1MobileBootstrapResponse": "docebo:GetManageV1MobileBootstrapResponse",
+    "is_session_valid": {
+      "@id": "docebo:is_session_valid",
+      "@type": "xsd:boolean"
+    },
+    "GetManageV1SiteBootstrapResponse": "docebo:GetManageV1SiteBootstrapResponse",
+    "data.settings.currency_settings.currency": {
+      "@id": "docebo:data.settings.currency_settings.currency",
+      "@type": "xsd:string"
+    },
+    "data.settings.currency_settings.currency_symbol": {
+      "@id": "docebo:data.settings.currency_settings.currency_symbol",
+      "@type": "xsd:string"
+    },
+    "data.ecommerce_settings.currency_configuration": {
+      "@id": "docebo:data.ecommerce_settings.currency_configuration",
+      "@type": "xsd:string"
+    },
+    "PostManageV1UserBatchDeleteRequest": "docebo:PostManageV1UserBatchDeleteRequest",
+    "PostManageV1UserBatchDeleteResponse": "docebo:PostManageV1UserBatchDeleteResponse",
+    "DeleteManageV1UserDeleteResponse": "docebo:DeleteManageV1UserDeleteResponse",
+    "Success": {
+      "@id": "docebo:Success",
+      "@type": "xsd:boolean"
+    },
+    "GetManageV1UserUseridResponse": "docebo:GetManageV1UserUseridResponse",
+    "language": {
+      "@id": "docebo:language",
+      "@type": "xsd:string"
+    },
+    "PostOauth2TokenRequest": "docebo:PostOauth2TokenRequest",
+    "grant_type": {
+      "@id": "docebo:grant_type",
+      "@type": "xsd:string"
+    },
+    "scope": {
+      "@id": "docebo:scope",
+      "@type": "xsd:string"
+    },
+    "client_id": {
+      "@id": "docebo:client_id",
+      "@type": "xsd:string"
+    },
+    "client_secret": {
+      "@id": "docebo:client_secret",
+      "@type": "xsd:string"
+    },
+    "username": {
+      "@id": "docebo:username",
+      "@type": "xsd:string"
+    },
+    "password": {
+      "@id": "docebo:password",
+      "@type": "xsd:string"
+    },
+    "assertion": {
+      "@id": "docebo:assertion",
+      "@type": "xsd:string"
+    },
+    "PostOauth2TokenResponse": "docebo:PostOauth2TokenResponse",
+    "access_token": {
+      "@id": "docebo:access_token",
+      "@type": "xsd:string"
+    },
+    "expires_in": {
+      "@id": "docebo:expires_in",
+      "@type": "xsd:integer"
+    },
+    "token_type": {
+      "@id": "docebo:token_type",
+      "@type": "xsd:string"
+    },
+    "refresh_token": {
+      "@id": "docebo:refresh_token",
+      "@type": "xsd:string"
+    },
+    "GetPoweruserV1PowerusersResponse": "docebo:GetPoweruserV1PowerusersResponse",
+    "GetPoweruserV1ProfileResponse": "docebo:GetPoweruserV1ProfileResponse",
+    "GetPoweruserV1ProfilesProfileidPoweruserResponse": "docebo:GetPoweruserV1ProfilesProfileidPoweruserResponse",
+    "GetReportV1ReportReportidDataResponse": "docebo:GetReportV1ReportReportidDataResponse",
+    "user.idUser": {
+      "@id": "docebo:user.idUser",
+      "@type": "xsd:integer"
+    },
+    "GetSetupV1FlowSettingsResponse": "docebo:GetSetupV1FlowSettingsResponse",
+    "data": {
+      "@id": "docebo:data"
+    },
+    "data.kernel_url": {
+      "@id": "docebo:data.kernel_url",
+      "@type": "xsd:string"
+    },
+    "data.sdk_kernel_url": {
+      "@id": "docebo:data.sdk_kernel_url",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "docebo:version",
+      "@type": "xsd:string"
+    },
+    "_links": {
+      "@id": "docebo:_links",
+      "@container": "@list"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Docebo API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Docebo's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-20) from openapi/_ae-authored/docebo-openapi-generated.yml.",
+  "dcterms:created": "2026-10-20",
+  "dcterms:source": [
+    "openapi/_ae-authored/docebo-openapi-generated.yml"
+  ]
+}

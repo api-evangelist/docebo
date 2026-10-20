@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/docebo/main/json-schema/docebo-post-learn-v1-lo-id-track-request-schema.json",
+  "title": "PostLearnV1LoIdTrackRequest",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1LoIdTrackRequest",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "description": "The type of tracking (e.g., submission, comment_reply, start, continue, next, prev, submit_partial, submit, time_elapsed_submit, time_enabled_force_exit, review)"
+    },
+    "submission": {
+      "type": "object",
+      "description": "The data payload for assignment tracking (required for assignment type submissions)"
+    },
+    "id": {
+      "type": "integer",
+      "description": "The reply identifier (required only when type is comment_reply)"
+    },
+    "learner_reply": {
+      "type": "string",
+      "description": "The text of the reply (required only when type is comment_reply)"
+    },
+    "name": {
+      "type": "string",
+      "description": "The title of the submitted assignment (required only when type is submission)"
+    },
+    "description": {
+      "type": "string",
+      "description": "An optional description of the submitted assignment"
+    },
+    "files": {
+      "type": "array",
+      "description": "An array of uploaded S3 file URLs (required only when type is submission)"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "The URL submitted in the assignment (required only when type is submission)"
+    },
+    "action": {
+      "type": "string",
+      "description": "The action to perform on this quiz (required for quiz type)"
+    },
+    "questions": {
+      "type": "object",
+      "description": "An object containing the quiz answers to submit, indexed by question ID (required for quiz type)"
+    },
+    "user_status": {
+      "type": "object",
+      "description": "User status information"
+    },
+    "answer": {
+      "type": "integer",
+      "description": "The answer to this question (required for certain question types)"
+    },
+    "answers": {
+      "type": "object",
+      "description": "An object containing a list of answers (required for certain question types)"
+    },
+    "bookmark": {
+      "type": "integer",
+      "description": "The last slide number played by the learner (for slides) or video offset reached by the user (for video)"
+    },
+    "complete": {
+      "type": "boolean",
+      "description": "Set to TRUE if the video is completed (for video type)"
+    },
+    "submitted": {
+      "type": "boolean",
+      "description": "Submit the poll as completed (for survey type)"
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

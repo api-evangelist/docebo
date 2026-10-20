@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/docebo/main/json-schema/docebo-post-oauth2-token-response-schema.json",
+  "title": "PostOauth2TokenResponse",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostOauth2TokenResponse",
+  "type": "object",
+  "properties": {
+    "access_token": {
+      "type": "string",
+      "description": "The access token to be used in API calls"
+    },
+    "expires_in": {
+      "type": "integer",
+      "description": "Token expiration time in seconds"
+    },
+    "token_type": {
+      "type": "string",
+      "description": "Type of token (Bearer)"
+    },
+    "scope": {
+      "type": "string",
+      "description": "The scope of the access token"
+    },
+    "refresh_token": {
+      "type": "string",
+      "description": "Refresh token for obtaining new access tokens"
+    }
+  }
+}

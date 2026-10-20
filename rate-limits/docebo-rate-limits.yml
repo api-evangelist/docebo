@@ -1,33 +1,19 @@
-# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (undated — the file carries no date and git cannot supply one), not
-# harvested from the provider. `method: generated` so the economics campaign may replace it with a
-# dated, verbatim transcription; every figure below is unverified until it does.
-method: generated
-name: Docebo API Rate Limits
-description: Rate limiting policies for the Docebo REST API
-url: https://developer.docebo.com/docs/api-general-information
+name: Docebo rate limits
+generated: '2026-10-20'
+method: searched
+source: https://developer.docebo.com/docs/best-practices-for-handling-api-rate-limits-and-429-errors
+model: token bucket per identity
+limit_count: 0
 limits:
-  - plan: Elevate
-    rate: Standard
-    unit: per minute
-    notes: Exact threshold not publicly documented; contact Docebo for specifics
-
-  - plan: Enterprise
-    rate: 100
-    unit: calls per minute
-    notes: Documented on the Docebo pricing page; can be increased via add-on
-
-enforcement:
-  - http_status: 429
-    description: Too Many Requests — returned when rate limit is exceeded
-    retry_strategy: Exponential backoff recommended
-
-pagination:
-  default_page_size: 10
-  max_page_size: 200
-  notes: Controlled via per_page query parameter; batch endpoints support bulk operations
-
-general_notes:
-  - Rate limits may vary depending on platform configuration
-  - API Limit Upgrades / Dedicated Architecture add-on available for heavy enterprise workloads
-  - Trust Center page documents per-tier specifics for contracted customers
-  - HTTPS strongly recommended for all API calls
+- name: Per-identity token bucket
+  scope: per-identity
+  kind: token-bucket
+  limit_text: Tokens refill at a fixed tokens-per-second rate
+  note: No numeric threshold published; docs say do not assume any fixed rate window or quota.
+exhaustion:
+  status: 429
+headers:
+  retry_after: false
+  remaining: false
+  note: 'Our current rate-limiting implementation does not return: Retry-After header; Remaining quota for the current window; Information about the size or boundaries of the time window'
+note: Replaces an undated generated file whose per-plan figures were not on any page.

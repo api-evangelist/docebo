@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/docebo/main/json-schema/docebo-get-learningplan-v1-learningplans-learningplanid-courses-enrollmen-schema.json",
+  "title": "GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen",
+  "type": "object",
+  "properties": {
+    "Items": {
+      "type": "array",
+      "description": "The repeatable list of enrollment records for courses inside the Learning Plan"
+    },
+    "User ID": {
+      "type": "integer",
+      "description": "The ID of the enrolled user"
+    },
+    "Username": {
+      "type": "string",
+      "description": "The user's username"
+    },
+    "Course ID": {
+      "type": "integer",
+      "description": "The ID of the enrolled course"
+    },
+    "Course uid": {
+      "type": "string",
+      "description": "The unique identifier of the course"
+    },
+    "Course code": {
+      "type": "string",
+      "description": "The code of the course"
+    },
+    "Course name": {
+      "type": "string",
+      "description": "The name of the course"
+    },
+    "Course type": {
+      "type": "string",
+      "description": "The type of course (for example, elearning, classroom)"
+    },
+    "Course begin date": {
+      "type": "string",
+      "description": "The official begin date for the course content"
+    },
+    "Course end date": {
+      "type": "string",
+      "description": "The official end date for the course content"
+    },
+    "Enrollment level": {
+      "type": "string",
+      "description": "The user's level in the course enrollment (for example, student, instructor)"
+    },
+    "Enrollment status": {
+      "type": "string",
+      "description": "The current status of the enrollment (for example, enrolled, completed)"
+    },
+    "Enrollment created by": {
+      "type": "integer",
+      "description": "The ID of the user who performed the enrollment"
+    },
+    "Enrollment created at": {
+      "type": "string",
+      "description": "The date the enrollment was created"
+    },
+    "Enrollment validity begin date": {
+      "type": "string",
+      "description": "The date the enrollment validity begins"
+    },
+    "Enrollment validity end date": {
+      "type": "string",
+      "description": "The date the enrollment validity ends"
+    },
+    "Enrollment date last updated": {
+      "type": "string",
+      "description": "The last date the enrollment status was updated"
+    },
+    "Enrollment completion date": {
+      "type": "string",
+      "description": "The date the enrollment status became completed"
+    },
+    "Enrollment score": {
+      "type": "integer",
+      "description": "The score achieved in the course"
+    },
+    "Enrollment time spent": {
+      "type": "integer",
+      "description": "The time spent in the course (in seconds)"
+    },
+    "Count": {
+      "type": "integer",
+      "description": "The number of results in the current page"
+    },
+    "Has more data": {
+      "type": "boolean",
+      "description": "Returns true if there are more pages of results"
+    },
+    "Cursor": {
+      "type": "string",
+      "description": "Cursor string for fetching the next page"
+    },
+    "Current page": {
+      "type": "integer",
+      "description": "The current page number"
+    },
+    "Current page size": {
+      "type": "integer",
+      "description": "The number of results per page returned"
+    },
+    "Total page count": {
+      "type": "integer",
+      "description": "The total number of pages available"
+    },
+    "Total count": {
+      "type": "integer",
+      "description": "The total number of all matching record"
+    },
+    "Sort": {
+      "type": "array",
+      "description": "Details about the sorting applied to the results"
+    }
+  }
+}

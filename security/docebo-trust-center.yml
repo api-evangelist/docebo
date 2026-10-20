@@ -1,0 +1,12 @@
+generated: '2026-10-20'
+method: searched
+probe: true
+source: https://www.docebo.com/company/compliance-security/
+url: https://www.docebo.com/company/compliance-security/
+certifications:
+- GDPR
+evidence:
+- source: https://www.docebo.com/company/compliance-security/
+  keywords:
+  - trust center
+  - gdpr

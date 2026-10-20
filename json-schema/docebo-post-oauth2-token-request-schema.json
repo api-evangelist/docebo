@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/docebo/main/json-schema/docebo-post-oauth2-token-request-schema.json",
+  "title": "PostOauth2TokenRequest",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostOauth2TokenRequest",
+  "type": "object",
+  "properties": {
+    "grant_type": {
+      "type": "string",
+      "description": "OAuth 2.0 grant type (e.g., password, client_credentials, urn:ietf:params:oauth:grant-type:jwt-bearer)"
+    },
+    "scope": {
+      "type": "string",
+      "description": "Set of resources and operations the access token permits"
+    },
+    "client_id": {
+      "type": "string",
+      "description": "OAuth 2.0 app client ID"
+    },
+    "client_secret": {
+      "type": "string",
+      "description": "OAuth 2.0 app client secret"
+    },
+    "username": {
+      "type": "string",
+      "description": "Username for Resource Owner Password Credentials grant type"
+    },
+    "password": {
+      "type": "string",
+      "description": "Password for Resource Owner Password Credentials grant type"
+    },
+    "assertion": {
+      "type": "string",
+      "description": "Encoded JWT token for JWT Bearer grant type"
+    }
+  },
+  "required": [
+    "grant_type",
+    "scope",
+    "client_id"
+  ]
+}

@@ -1,0 +1,3805 @@
+openapi: 3.1.0
+info:
+  title: Docebo API
+  version: '2026-10-20'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-20: 184 operation(s) read from 31 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Docebo has published no machine-readable contract that
+    the pipeline could find. Engine: anthropic.'
+  x-evidence-tiers:
+    code-example: 12
+    documentation: 172
+    pages-with-code: 14
+    pages-read: 31
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-20'
+  x-generator: generate-contract-from-docs.py
+  x-engine: anthropic
+  x-sources:
+  - https://developer.docebo.com/v1/docs/apis-authentication
+  - https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+  - https://developer.docebo.com/v1/docs/overview-of-api-services-and-endpoints
+  - https://developer.docebo.com/v1/docs/send-your-first-requests-using-the-api-browser
+  - https://developer.docebo.com/docs/overview-of-api-services-and-endpoints
+  - https://developer.docebo.com/llms.txt
+  - https://developer.docebo.com/docs/api-guides
+  - https://developer.docebo.com/docs/api-guides.md
+  - https://developer.docebo.com/docs/apis-authentication
+  - https://developer.docebo.com/docs/apis-authentication.md
+  - https://developer.docebo.com/docs/api-general-information
+  - https://developer.docebo.com/docs/webhooks-error-management
+  - https://developer.docebo.com/docs/api-general-information.md
+  - https://developer.docebo.com/docs/api-essentials-retrieving-ids
+  - https://developer.docebo.com/docs/api-essentials-retrieving-ids.md
+  - https://developer.docebo.com/docs/deprecated-and-changed-api-calls
+  - https://developer.docebo.com/docs/api-browser-technical-information
+  - https://developer.docebo.com/docs/api-browser-technical-information.md
+  - https://developer.docebo.com/docs/activating-and-managing-the-api-and-sso-app.md
+  - https://developer.docebo.com/docs/send-your-first-requests-using-the-api-browser
+  - https://developer.docebo.com/docs/supplemental-information-for-api-call-post-learnv1loidtrack
+  - https://developer.docebo.com/docs/supplemental-information-for-api-call-post-learnv1loidtrack.md
+  - https://developer.docebo.com/docs/connector-users
+  - https://developer.docebo.com/docs/docebo-connect-for-qualtrics.md
+  - https://developer.docebo.com/docs/docebo-connect-for-edcast-lxp.md
+  - https://developer.docebo.com/docs/embedded-learning-building-blocks-1
+  - https://developer.docebo.com/docs/docebo-connect-for-udemy-business.md
+  - https://developer.docebo.com/docs/docebo-connect-for-google-calendar.md
+  - https://developer.docebo.com/docs/docebo-connect-connector-enrollments
+  - https://developer.docebo.com/docs/embedded-learning-building-blocks-course-player-widget
+  - https://developer.docebo.com/docs/docebo-connect-for-udemy-business
+servers:
+- url: https://yourdomain.docebosaas.com
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://developer.docebo.com/docs/apis-authentication.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://<yoursubdomain.docebosaas.com>/learn/v1/courses  -H ''Authorization: Bearer 2af6ac532cfef197b00f69639aeeef86621d1975''
+
+          ```'
+    post:
+      operationId: post
+      tags:
+      - Api
+      summary: POST /
+      x-source: https://developer.docebo.com/v1/docs/apis-authentication
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST https://<yoursubdomain.docebosaas.com>/oauth2/token  -F client_id=<your_client_id>  -F client_secret=<your_client_secret>\
+          \  -F grant_type=password  -F scope=api  -F username=<your_username>  -F password=<your_password> Response: {\n  \"access_token\": \"\
+          87b567fa3de847fb3adef9492b294bb83f8cd266\",\n  \"expires_in\": 3600,\n  \"token_type\": \"Bearer\",\n  \"scope\": \"api\",\n  \"refresh_token\"\
+          :\"7db6e6a331"
+  /analytics/v1/custom-report-types:
+    get:
+      operationId: get_analytics_v1_custom_report_types
+      tags:
+      - Analytics
+      summary: Retrieve query builder reports IDs for custom report types.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAnalyticsV1CustomReportTypesResponse'
+      x-evidence:
+        kind: documentation
+  /analytics/v1/custom-report-types/active:
+    get:
+      operationId: get_analytics_v1_custom_report_types_active
+      tags:
+      - Analytics
+      summary: Retrieve query builder reports IDs for active custom report types.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAnalyticsV1CustomReportTypesActiveResponse'
+      x-evidence:
+        kind: documentation
+  /analytics/v1/reports:
+    get:
+      operationId: get_analytics_v1_reports
+      tags:
+      - Analytics
+      summary: Retrieve new reports (no legacy reports).
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAnalyticsV1ReportsResponse'
+      x-evidence:
+        kind: documentation
+  /analytics/v1/reports/{idReport}/exports/{idExport}/download:
+    get:
+      operationId: get_analytics_v1_reports_idReport_exports_idExport_download
+      tags:
+      - Analytics
+      summary: Get exported report file stream.
+      x-source: https://developer.docebo.com/docs/api-browser-technical-information
+      parameters:
+      - name: idReport
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: idExport
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /api-browser:
+    get:
+      operationId: get_api_browser
+      tags:
+      - Api Browser
+      summary: GET /api-browser
+      x-source: https://developer.docebo.com/docs/activating-and-managing-the-api-and-sso-app.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: httpie
+        snippet: 'http
+
+          https://yoursubdomain.docebosaas.com/api-browser/'
+  /audiences/v1/audience:
+    get:
+      operationId: get_audiences_v1_audience
+      tags:
+      - Audiences
+      summary: Retrieve audience IDs (Group).
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAudiencesV1AudienceResponse'
+      x-evidence:
+        kind: documentation
+  /audiences/v1/audience/{id}/group_to_audience:
+    get:
+      operationId: get_audiences_v1_audience_id_group_to_audience
+      tags:
+      - Audiences
+      summary: Retrieve audience ID by group ID.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAudiencesV1AudienceIdGroupToAudienceResponse'
+      x-evidence:
+        kind: documentation
+  /audiences/v1/audience/{uuid}/audience_to_group:
+    get:
+      operationId: get_audiences_v1_audience_uuid_audience_to_group
+      tags:
+      - Audiences
+      summary: Retrieve group ID by audience ID.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAudiencesV1AudienceUuidAudienceToGroupResponse'
+      x-evidence:
+        kind: documentation
+  /authorize:
+    get:
+      operationId: get_authorize
+      tags:
+      - Authorize
+      summary: GET /authorize
+      x-source: https://developer.docebo.com/docs/activating-and-managing-the-api-and-sso-app.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: httpie
+        snippet: 'http
+
+          https://oauth2/authorize'
+  /catalogmanagement/v1/catalogs/{id}/courses:
+    get:
+      operationId: get_catalogmanagement_v1_catalogs_id_courses
+      tags:
+      - Catalogmanagement
+      summary: Values price and training_credits are no longer valid in sort_attr, and price_min / price_max query parameters are removed; the
+        response drops items[x].ecommerce.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /catalogmanagement/v1/catalogs/{id}/learningplans:
+    get:
+      operationId: get_catalogmanagement_v1_catalogs_id_learningplans
+      tags:
+      - Catalogmanagement
+      summary: Values price and training_credits are no longer valid in sort_attr, and price_min / price_max query parameters are removed; the
+        response drops items[x].ecommerce.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /course/v1/courses:
+    get:
+      operationId: get_course_v1_courses
+      tags:
+      - Course
+      summary: Price is no longer a valid sort_attr; items[x].price and items[x].prices are dropped.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: sort_attr
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Price is no longer a valid sort attribute
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCourseV1CoursesResponse'
+      x-evidence:
+        kind: documentation
+  /course/v1/courses/archived/{id}/details:
+    get:
+      operationId: get_course_v1_courses_archived_id_details
+      tags:
+      - Course
+      summary: Retrieve details of an archived course by ID.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /course/v1/courses/webinarmigration/mapping/{courseId}:
+    get:
+      operationId: get_course_v1_courses_webinarmigration_mapping_courseId
+      tags:
+      - Course
+      summary: Retrieve webinar migration mapping for a course.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /course/v1/courses/{courseId}/sessions:
+    get:
+      operationId: get_course_v1_courses_courseId_sessions
+      tags:
+      - Course
+      summary: Retrieve sessions for a course; migrated_webinar_session_id response parameter has been removed.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /course/v1/courses/{id}:
+    get:
+      operationId: get_course_v1_courses_id
+      tags:
+      - Course
+      summary: The response drops data.ecommerce_options.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCourseV1CoursesIdResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_course_v1_courses_id
+      tags:
+      - Course
+      summary: The payload drops ecommerce_options.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutCourseV1CoursesIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /course/v1/courses/{id}/duplicate:
+    post:
+      operationId: post_course_v1_courses_id_duplicate
+      tags:
+      - Course
+      summary: Price and affiliate price are no longer cloned; the duplicated course comes out free.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /course/v1/sessions/{sessionId}:
+    get:
+      operationId: get_course_v1_sessions_sessionId
+      tags:
+      - Course
+      summary: Retrieve session details; migrated_webinar_session_id response parameter has been removed.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /course/v1/sessions/{sessionId}/events:
+    get:
+      operationId: get_course_v1_sessions_sessionId_events
+      tags:
+      - Course
+      summary: Retrieve event IDs for a specific session.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCourseV1SessionsSessionidEventsResponse'
+      x-evidence:
+        kind: documentation
+  /course/v1/thumbnails:
+    get:
+      operationId: get_course_v1_thumbnails
+      tags:
+      - Course
+      summary: Retrieve thumbnail IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCourseV1ThumbnailsResponse'
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/admin/prices/courses:
+    get:
+      operationId: get_ecommerce_v1_admin_prices_courses
+      tags:
+      - Ecommerce
+      summary: Pull course prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/admin/prices/courses/{id}:
+    get:
+      operationId: get_ecommerce_v1_admin_prices_courses_id
+      tags:
+      - Ecommerce
+      summary: Get the course's prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_ecommerce_v1_admin_prices_courses_id
+      tags:
+      - Ecommerce
+      summary: Set the on-sale status and price on a course.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/admin/prices/learning-plans:
+    get:
+      operationId: get_ecommerce_v1_admin_prices_learning_plans
+      tags:
+      - Ecommerce
+      summary: Pull learning plan prices from this endpoint.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/admin/prices/learning-plans/{id}:
+    get:
+      operationId: get_ecommerce_v1_admin_prices_learning_plans_id
+      tags:
+      - Ecommerce
+      summary: Get learning plan prices from this endpoint.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_ecommerce_v1_admin_prices_learning_plans_id
+      tags:
+      - Ecommerce
+      summary: Set the on-sale status and price on the learning plan.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/admin/prices/subscription-plans/{id}:
+    put:
+      operationId: put_ecommerce_v1_admin_prices_subscription_plans_id
+      tags:
+      - Ecommerce
+      summary: Endpoint for setting subscription plan prices with currency configuration.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/coupon:
+    get:
+      operationId: get_ecommerce_v1_coupon
+      tags:
+      - Ecommerce
+      summary: Retrieve coupons IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/currencies:
+    get:
+      operationId: get_ecommerce_v1_currencies
+      tags:
+      - Ecommerce
+      summary: Retrieve domain currency and the currency symbol.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/ecommerce/settings:
+    get:
+      operationId: get_ecommerce_v1_ecommerce_settings
+      tags:
+      - Ecommerce
+      summary: Retrieve ecommerce settings endpoint that has been removed.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_ecommerce_v1_ecommerce_settings
+      tags:
+      - Ecommerce
+      summary: Create ecommerce settings endpoint that has been removed.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/ecommerce/settings/code:
+    put:
+      operationId: put_ecommerce_v1_ecommerce_settings_code
+      tags:
+      - Ecommerce
+      summary: Update ecommerce settings code endpoint that has been removed.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/transaction:
+    get:
+      operationId: get_ecommerce_v1_transaction
+      tags:
+      - Ecommerce
+      summary: Retrieve transactions IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/transaction/batch:
+    put:
+      operationId: put_ecommerce_v1_transaction_batch
+      tags:
+      - Ecommerce
+      summary: Removed endpoint.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /ecommerce/v1/transaction/list:
+    get:
+      operationId: get_ecommerce_v1_transaction_list
+      tags:
+      - Ecommerce
+      summary: Retrieve transactions IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /enrollment/v1/courses/archives/{recordId}/sessions:
+    get:
+      operationId: get_enrollment_v1_courses_archives_recordId_sessions
+      tags:
+      - Enrollment
+      summary: Retrieve the session list of archived course enrollments.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: recordId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /enrollment/v1/courses/{courseId}/archives:
+    get:
+      operationId: get_enrollment_v1_courses_courseId_archives
+      tags:
+      - Enrollment
+      summary: Retrieve the IDs of archived enrollment records.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn:
+    get:
+      operationId: get_learn
+      tags:
+      - Learn
+      summary: GET /learn
+      x-source: https://developer.docebo.com/docs/apis-authentication.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: httpie
+        snippet: 'http
+
+          https://yourlms.docebosaas.com/learn;type=oauth2_response;access_token=<token>;expires_in=4000;token_type=bearer;scope=api'
+  /learn/course/{courseid}/session/{sessionid}/{sessionnameslug}:
+    get:
+      operationId: get_learn_course_courseid_session_sessionid_sessionnameslug
+      tags:
+      - Learn
+      summary: GET /learn/course/{courseId}/session/{sessionId}/{sessionNameSlug}
+      x-source: https://developer.docebo.com/docs/docebo-connect-for-google-calendar.md
+      parameters:
+      - name: courseid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sessionid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sessionnameslug
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: httpie
+        snippet: 'http
+
+          https://{lms_base_uri}/learn/course/{course_id}/session/{session_id}/{session_name_slug}'
+  /learn/v1/catalog/advanced_filters:
+    get:
+      operationId: get_learn_v1_catalog_advanced_filters
+      tags:
+      - Learn
+      summary: user_is_not_enrolled filter removed, replaced by enrolment_status parameter
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/catalog/filters:
+    get:
+      operationId: get_learn_v1_catalog_filters
+      tags:
+      - Learn
+      summary: user_is_not_enrolled filter removed, replaced by enrolment_status parameter
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/catalog/internal_filters:
+    get:
+      operationId: get_learn_v1_catalog_internal_filters
+      tags:
+      - Learn
+      summary: user_is_not_enrolled filter removed, replaced by enrolment_status parameter
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/catalog_content/internal:
+    get:
+      operationId: get_learn_v1_catalog_content_internal
+      tags:
+      - Learn
+      summary: The response adds items[x].currency_prices and drops item_price, affiliate_price, prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1CatalogContentInternalResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/catalog_content/internal/{catalogId}:
+    get:
+      operationId: get_learn_v1_catalog_content_internal_catalogId
+      tags:
+      - Learn
+      summary: The response adds items[x].currency_prices and drops item_price, affiliate_price, prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: catalogId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1CatalogContentInternalCatalogidResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/catalog_content/public:
+    get:
+      operationId: get_learn_v1_catalog_content_public
+      tags:
+      - Learn
+      summary: The response adds items[x].data.sub_items[x].currency_prices and drops item_price, affiliate_price, prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1CatalogContentPublicResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/catalog_content/public/{catalogId}:
+    get:
+      operationId: get_learn_v1_catalog_content_public_catalogId
+      tags:
+      - Learn
+      summary: The response adds items[x].currency_prices and drops item_price, affiliate_price, prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: catalogId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1CatalogContentPublicCatalogidResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/categories:
+    get:
+      operationId: get_learn_v1_categories
+      tags:
+      - Learn
+      summary: Retrieve the IDs of categories.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/certification:
+    get:
+      operationId: get_learn_v1_certification
+      tags:
+      - Learn
+      summary: Retrieve the IDs of certifications.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/classroom:
+    get:
+      operationId: get_learn_v1_classroom
+      tags:
+      - Learn
+      summary: Retrieve the IDs of classrooms.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/course/compact_list:
+    get:
+      operationId: get_learn_v1_course_compact_list
+      tags:
+      - Learn
+      summary: Removed in December 2024.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses:
+    get:
+      operationId: get_learn_v1_courses
+      tags:
+      - Learn
+      summary: The response adds currency_prices and drops price and affiliate_price.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1CoursesResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_learn_v1_courses
+      tags:
+      - Learn
+      summary: The payload no longer accepts selling price and prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLearnV1CoursesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/batch:
+    post:
+      operationId: post_learn_v1_courses_batch
+      tags:
+      - Learn
+      summary: The payload drops course_for_sale, course_price, affiliate_price, content_partner_code, content_partner_fields, and field_XX.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLearnV1CoursesBatchRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/enrollment_pdf:
+    post:
+      operationId: post_learn_v1_courses_enrollment_pdf
+      tags:
+      - Learn
+      summary: Download the course enrollment statistics PDF file.
+      x-source: https://developer.docebo.com/docs/api-browser-technical-information
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/session/{idSession}/date/{yyyyMmDd}:
+    get:
+      operationId: get_learn_v1_courses_session_idSession_date_yyyyMmDd
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: idSession
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: yyyyMmDd
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/{courseId}/by_category:
+    get:
+      operationId: get_learn_v1_courses_courseId_by_category
+      tags:
+      - Learn
+      summary: The response adds currency_prices and drops price, prices, and affiliate_price.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1CoursesCourseidByCategoryResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/{courseId}/los:
+    get:
+      operationId: get_learn_v1_courses_courseId_los
+      tags:
+      - Learn
+      summary: Retrieve training materials for a specific course.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/{courseId}/sessions/enrollments:
+    get:
+      operationId: get_learn_v1_courses_courseId_sessions_enrollments
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/{courseId}/webinar/sessions/{sessionId}:
+    get:
+      operationId: get_learn_v1_courses_courseId_webinar_sessions_sessionId
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/{id}:
+    put:
+      operationId: put_learn_v1_courses_id
+      tags:
+      - Learn
+      summary: Update an existing course.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/courses/{id}/sessions:
+    get:
+      operationId: get_learn_v1_courses_id_sessions
+      tags:
+      - Learn
+      summary: Retrieve sessions for a course; migrated_webinar_session_id response parameter has been removed.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/enrollment/{courseId}/{userId}:
+    delete:
+      operationId: delete_learn_v1_enrollment_courseId_userId
+      tags:
+      - Learn
+      summary: Removes a specific user's enrollment from a given course.
+      x-source: https://developer.docebo.com/docs/docebo-connect-connector-enrollments
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteLearnV1EnrollmentCourseidUseridResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/enrollments:
+    delete:
+      operationId: delete_learn_v1_enrollments
+      tags:
+      - Learn
+      summary: Removes a user's enrollment from a learning plan.
+      x-source: https://developer.docebo.com/docs/docebo-connect-connector-enrollments
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteLearnV1EnrollmentsResponse'
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_learn_v1_enrollments
+      tags:
+      - Learn
+      summary: Retrieve enrollment information.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      parameters:
+      - name: id_user
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_learn_v1_enrollments
+      tags:
+      - Learn
+      summary: Changed endpoint where the notification_ids property has been changed to an array of strings.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLearnV1EnrollmentsResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/enrollments/{courseId}/{userId}:
+    post:
+      operationId: post_learn_v1_enrollments_courseId_userId
+      tags:
+      - Learn
+      summary: Enrolls a specified user into a course using the provided course ID and user ID.
+      x-source: https://developer.docebo.com/docs/docebo-connect-connector-enrollments
+      parameters:
+      - name: courseId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLearnV1EnrollmentsCourseidUseridRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLearnV1EnrollmentsCourseidUseridResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/external_training:
+    get:
+      operationId: get_learn_v1_external_training
+      tags:
+      - Learn
+      summary: Retrieve the IDs of external training.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/filerepo/downloadCourseFile:
+    get:
+      operationId: get_learn_v1_filerepo_downloadCourseFile
+      tags:
+      - Learn
+      summary: Download the course file content.
+      x-source: https://developer.docebo.com/docs/api-browser-technical-information
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/instructor/assignment:
+    get:
+      operationId: get_learn_v1_instructor_assignment
+      tags:
+      - Learn
+      summary: Retrieve the IDs of assignments submission.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/lo/tracks/batch:
+    post:
+      operationId: post_learn_v1_lo_tracks_batch
+      tags:
+      - Learn
+      summary: Store user status for each course they are enrolled in.
+      x-source: https://developer.docebo.com/docs/docebo-connect-for-udemy-business
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/lo/{id}/track:
+    post:
+      operationId: post_learn_v1_lo_id_track
+      tags:
+      - Learn
+      summary: Track learning object progress with inputs and outputs varying by training material type.
+      x-source: https://developer.docebo.com/docs/supplemental-information-for-api-call-post-learnv1loidtrack
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLearnV1LoIdTrackRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLearnV1LoIdTrackResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/location:
+    get:
+      operationId: get_learn_v1_location
+      tags:
+      - Learn
+      summary: Retrieve location information.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/lp/compact_list:
+    post:
+      operationId: post_learn_v1_lp_compact_list
+      tags:
+      - Learn
+      summary: Removed in December 2024.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/lp/{lpId}:
+    get:
+      operationId: get_learn_v1_lp_lpId
+      tags:
+      - Learn
+      summary: The response adds currency_prices and courses[x].currency_prices, and drops price, prices, enter_status.price, subscription.price,
+        courses[x].price, courses[x].prize, courses[x].ecommerce, and courses
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: lpId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1LpLpidResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/sub_bundle:
+    get:
+      operationId: get_learn_v1_sub_bundle
+      tags:
+      - Learn
+      summary: Retrieve the IDs of subscription bundle.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/sub_field:
+    get:
+      operationId: get_learn_v1_sub_field
+      tags:
+      - Learn
+      summary: Retrieve the IDs of subscription bundle additional fields.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/sub_plan:
+    get:
+      operationId: get_learn_v1_sub_plan
+      tags:
+      - Learn
+      summary: The response drops items[X].plan_price and adds items[X].prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1SubPlanResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_learn_v1_sub_plan
+      tags:
+      - Learn
+      summary: The payload drops price and adds prices; the response adds data.prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLearnV1SubPlanRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostLearnV1SubPlanResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/sub_plan/batch:
+    post:
+      operationId: post_learn_v1_sub_plan_batch
+      tags:
+      - Learn
+      summary: The payload drops items[x].price and adds items[x].prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLearnV1SubPlanBatchRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/sub_plan/{planId}:
+    get:
+      operationId: get_learn_v1_sub_plan_planId
+      tags:
+      - Learn
+      summary: The response drops price and subscription_records[X].price; adds prices and subscription_records[X].renewal_price.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: planId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1SubPlanPlanidResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_learn_v1_sub_plan_planId
+      tags:
+      - Learn
+      summary: The payload drops price and adds prices; the response adds data.prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: planId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutLearnV1SubPlanPlanidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutLearnV1SubPlanPlanidResponse'
+      x-evidence:
+        kind: documentation
+  /learn/v1/sub_record:
+    get:
+      operationId: get_learn_v1_sub_record
+      tags:
+      - Learn
+      summary: 'The response changes: data.items[n].price is now an object with data.items[n].price.currency and data.items[n].price.value.'
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1SubRecordResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_learn_v1_sub_record
+      tags:
+      - Learn
+      summary: 'The payload changes: price is now an object with price.currency and price.value (instead of a single numeric value).'
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLearnV1SubRecordRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/sub_record/{idRecord}:
+    get:
+      operationId: get_learn_v1_sub_record_idRecord
+      tags:
+      - Learn
+      summary: 'The response changes: data.subscription_record.price is now an object with data.subscription_record.price.currency and data.subscription_record.price.value.'
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: idRecord
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearnV1SubRecordIdrecordResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_learn_v1_sub_record_idRecord
+      tags:
+      - Learn
+      summary: 'The payload changes: price is now an object with price.currency and price.value (instead of a single numeric value).'
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: idRecord
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutLearnV1SubRecordIdrecordRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/sub_record/{recordId}/renew:
+    put:
+      operationId: put_learn_v1_sub_record_recordId_renew
+      tags:
+      - Learn
+      summary: Renew a subscription record endpoint that has been removed.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: recordId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webconference/getWebconferenceData:
+    get:
+      operationId: get_learn_v1_webconference_getWebconferenceData
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinar/accounts:
+    get:
+      operationId: get_learn_v1_webinar_accounts
+      tags:
+      - Learn
+      summary: Retrieve the IDs of web conference tools paired with the platform (Zoom).
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinar/adobeconnect/accounts:
+    get:
+      operationId: get_learn_v1_webinar_adobeconnect_accounts
+      tags:
+      - Learn
+      summary: Retrieve the IDs of web conference tools paired with the platform (Adobe Connect).
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinar/attendance/batch:
+    put:
+      operationId: put_learn_v1_webinar_attendance_batch
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinar/gotomeeting/accounts:
+    get:
+      operationId: get_learn_v1_webinar_gotomeeting_accounts
+      tags:
+      - Learn
+      summary: Retrieve the IDs of web conference tools paired with the platform (GotoMeeting).
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinar/msteams/accounts:
+    get:
+      operationId: get_learn_v1_webinar_msteams_accounts
+      tags:
+      - Learn
+      summary: Retrieve the IDs of web conference tools paired with the platform (Microsoft Teams).
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinar/{idSession}/{dateDay}/recording:
+    delete:
+      operationId: delete_learn_v1_webinar_idSession_dateDay_recording
+      tags:
+      - Learn
+      summary: Remove webinar recording endpoint that has been deprecated.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: idSession
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dateDay
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_learn_v1_webinar_idSession_dateDay_recording
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: idSession
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dateDay
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinar/{idSession}/{dateDay}/recording_status:
+    get:
+      operationId: get_learn_v1_webinar_idSession_dateDay_recording_status
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: idSession
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dateDay
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinars/importer_fields:
+    get:
+      operationId: get_learn_v1_webinars_importer_fields
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learn/v1/webinars/session/batch:
+    post:
+      operationId: post_learn_v1_webinars_session_batch
+      tags:
+      - Learn
+      summary: Removed no-longer-used API endpoint relating to webinars
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learningplan/v1/learningplans:
+    get:
+      operationId: get_learningplan_v1_learningplans
+      tags:
+      - Learningplan
+      summary: The response drops items[X].price and items[X].prices.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_learningplan_v1_learningplans
+      tags:
+      - Learningplan
+      summary: The payload drops ecommerce_options.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostLearningplanV1LearningplansRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learningplan/v1/learningplans/{learningPlanId}:
+    get:
+      operationId: get_learningplan_v1_learningplans_learningPlanId
+      tags:
+      - Learningplan
+      summary: The response drops data.ecommerce.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: learningPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_learningplan_v1_learningplans_learningPlanId
+      tags:
+      - Learningplan
+      summary: The payload drops ecommerce_options.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: learningPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutLearningplanV1LearningplansLearningplanidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learningplan/v1/learningplans/{learningPlanId}/additionalfields:
+    get:
+      operationId: get_learningplan_v1_learningplans_learningPlanId_additionalfields
+      tags:
+      - Learningplan
+      summary: Retrieve the IDs of learning plan additional fields.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: learningPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learningplan/v1/learningplans/{learningPlanId}/courses/enrollments:
+    get:
+      operationId: get_learningplan_v1_learningplans_learningPlanId_courses_enrollments
+      tags:
+      - Learningplan
+      summary: Retrieves enrollment details for courses within a specified learning plan.
+      x-source: https://developer.docebo.com/docs/docebo-connect-connector-enrollments
+      parameters:
+      - name: learningPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: User IDs
+        in: query
+        required: false
+        schema:
+          type: array
+      - name: Course IDs
+        in: query
+        required: false
+        schema:
+          type: array
+      - name: Course Types
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: Enrollment Levels
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: Enrollment Status
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: Page
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: Page size
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: Sort by
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: Sorting direction
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen'
+      x-evidence:
+        kind: documentation
+  /learningplan/v1/learningplans/{learningPlanId}/enrollments/bulk:
+    post:
+      operationId: post_learningplan_v1_learningplans_learningPlanId_enrollments_bulk
+      tags:
+      - Learningplan
+      summary: Changed in September 2024 to support custom enrollment date via enrolment_at parameter.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: learningPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /learningplan/v1/learningplans/{learningPlanId}/enrollments/{userId}:
+    patch:
+      operationId: patch_learningplan_v1_learningplans_learningPlanId_enrollments_userId
+      tags:
+      - Learningplan
+      summary: Changed in September 2024 to support custom enrollment date via enrolment_at parameter.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: learningPlanId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /loki/share/v1/assets/{assetId}:
+    get:
+      operationId: get_loki_share_v1_assets_assetId
+      tags:
+      - Loki
+      summary: Retrieve asset endpoint that has been removed.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: assetId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /loki/share/v1/playlists/{playlistId}/search:
+    get:
+      operationId: get_loki_share_v1_playlists_playlistId_search
+      tags:
+      - Loki
+      summary: Removed endpoint.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: playlistId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/channels:
+    get:
+      operationId: get_manage_v1_channels
+      tags:
+      - Manage
+      summary: Retrieve the IDs of channels.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/contentpartners:
+    get:
+      operationId: get_manage_v1_contentpartners
+      tags:
+      - Manage
+      summary: Retrieve the IDs of content partners.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/cookie_policy/policies/{id}:
+    get:
+      operationId: get_manage_v1_cookie_policy_policies_id
+      tags:
+      - Manage
+      summary: Removed in December 2024.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_manage_v1_cookie_policy_policies_id
+      tags:
+      - Manage
+      summary: Removed in December 2024.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/cookie_policy/{id}:
+    get:
+      operationId: get_manage_v1_cookie_policy_id
+      tags:
+      - Manage
+      summary: Removed in December 2024.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_manage_v1_cookie_policy_id
+      tags:
+      - Manage
+      summary: Removed in December 2024.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/enrollment_fields:
+    get:
+      operationId: get_manage_v1_enrollment_fields
+      tags:
+      - Manage
+      summary: Retrieve enrollment field IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/enrollment_rules:
+    get:
+      operationId: get_manage_v1_enrollment_rules
+      tags:
+      - Manage
+      summary: Changed endpoint where the notification_ids property has been changed to an array of strings.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetManageV1EnrollmentRulesResponse'
+      x-evidence:
+        kind: documentation
+  /manage/v1/enrollment_rules/{enrollmentRuleId}:
+    get:
+      operationId: get_manage_v1_enrollment_rules_enrollmentRuleId
+      tags:
+      - Manage
+      summary: Changed endpoint where the notification_ids property has been changed to an array of strings.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: enrollmentRuleId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetManageV1EnrollmentRulesEnrollmentruleidResponse'
+      x-evidence:
+        kind: documentation
+  /manage/v1/enrollment_rules/{enrollmentRuleId}/notifications:
+    delete:
+      operationId: delete_manage_v1_enrollment_rules_enrollmentRuleId_notifications
+      tags:
+      - Manage
+      summary: Removed endpoint with the transition to the new notification service.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: enrollmentRuleId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_manage_v1_enrollment_rules_enrollmentRuleId_notifications
+      tags:
+      - Manage
+      summary: Removed endpoint with the transition to the new notification service.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: enrollmentRuleId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_manage_v1_enrollment_rules_enrollmentRuleId_notifications
+      tags:
+      - Manage
+      summary: Removed endpoint with the transition to the new notification service.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: enrollmentRuleId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/group:
+    get:
+      operationId: get_manage_v1_group
+      tags:
+      - Manage
+      summary: GET /manage/v1/group
+      x-source: https://developer.docebo.com/docs/api-general-information
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -i -X GET http://yourdomain.docebosaas.com/manage/v1/group -H ''Authorization: Bearer f7bfc5f78877f6ec321a650b10e8aa3d32a18f32''
+          Response: HTTP/1.1 200 OK
+
+          Server: openresty
+
+          Date: Tue, 29 May 2018 08:35:06 GMT
+
+          Content-Type: application/json; charset=UTF-8
+
+          Content-Length: 479
+
+          Connection: keep-alive
+
+          Access-Control-Allow-Credentials: true
+
+          Access-Control-Expose-Headers: X-Docebo-Api-Version
+
+          X-Docebo'
+  /manage/v1/managers/types:
+    get:
+      operationId: get_manage_v1_managers_types
+      tags:
+      - Manage
+      summary: Retrieve manager type IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/mobile/bootstrap:
+    get:
+      operationId: get_manage_v1_mobile_bootstrap
+      tags:
+      - Manage
+      summary: The response is now context-aware and varies depending on whether the caller has a valid authenticated session and the caller's
+        user level.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetManageV1MobileBootstrapResponse'
+      x-evidence:
+        kind: documentation
+  /manage/v1/multidomain:
+    get:
+      operationId: get_manage_v1_multidomain
+      tags:
+      - Manage
+      summary: Retrieve extended enterprise domain IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/opengraph:
+    get:
+      operationId: get_manage_v1_opengraph
+      tags:
+      - Manage
+      summary: Removed for security reasons with no replacement.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/orgchart:
+    get:
+      operationId: get_manage_v1_orgchart
+      tags:
+      - Manage
+      summary: Retrieve branch IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_manage_v1_orgchart
+      tags:
+      - Manage
+      summary: Create a new organization chart branch.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/orgchart/batch:
+    post:
+      operationId: post_manage_v1_orgchart_batch
+      tags:
+      - Manage
+      summary: Create or update organization chart branches in batch.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/orgchart/{branchId}:
+    get:
+      operationId: get_manage_v1_orgchart_branchId
+      tags:
+      - Manage
+      summary: Retrieve organization chart information for a specific branch.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      parameters:
+      - name: branchId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: use_secondary_identifier
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_manage_v1_orgchart_branchId
+      tags:
+      - Manage
+      summary: Update an organization chart branch.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      parameters:
+      - name: branchId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/orgchart/{id}:
+    delete:
+      operationId: delete_manage_v1_orgchart_id
+      tags:
+      - Manage
+      summary: Delete an organization chart branch.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/orgchart/{id}/move:
+    post:
+      operationId: post_manage_v1_orgchart_id_move
+      tags:
+      - Manage
+      summary: Move an organization chart branch.
+      x-source: https://developer.docebo.com/docs/api-general-information
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/policy:
+    get:
+      operationId: get_manage_v1_policy
+      tags:
+      - Manage
+      summary: Retrieve privacy policy IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/site/bootstrap:
+    get:
+      operationId: get_manage_v1_site_bootstrap
+      tags:
+      - Manage
+      summary: The response drops currency_settings and adds ecommerce_settings.currency_configuration.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetManageV1SiteBootstrapResponse'
+      x-evidence:
+        kind: documentation
+  /manage/v1/tags:
+    get:
+      operationId: get_manage_v1_tags
+      tags:
+      - Manage
+      summary: Retrieve tag IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/termsandconditions:
+    get:
+      operationId: get_manage_v1_termsandconditions
+      tags:
+      - Manage
+      summary: Retrieve terms and conditions IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/trails:
+    get:
+      operationId: get_manage_v1_trails
+      tags:
+      - Manage
+      summary: Removed and replaced by POST audittrail/v1/audittrail and GET audittrail/v1/audittrail/{queryExecutionId}.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/user:
+    get:
+      operationId: get_manage_v1_user
+      tags:
+      - Manage
+      summary: The endpoint now applies the standard maximum of 200 users per response when the not_paginated parameter is set to true and search_text
+        is null or empty.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: not_paginated
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: search_text
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_manage_v1_user
+      tags:
+      - Manage
+      summary: Creates a new user
+      x-source: https://developer.docebo.com/v1/docs/overview-of-api-services-and-endpoints
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/user/batch:
+    post:
+      operationId: post_manage_v1_user_batch
+      tags:
+      - Manage
+      summary: Changed in December 2024; values for Yes/No user additional fields now accept specific formats.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/user/batch_delete:
+    post:
+      operationId: post_manage_v1_user_batch_delete
+      tags:
+      - Manage
+      summary: Deletes multiple users by ID.
+      x-source: https://developer.docebo.com/docs/connector-users
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostManageV1UserBatchDeleteRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostManageV1UserBatchDeleteResponse'
+      x-evidence:
+        kind: documentation
+  /manage/v1/user/delete:
+    delete:
+      operationId: delete_manage_v1_user_delete
+      tags:
+      - Manage
+      summary: Deletes a single user by ID.
+      x-source: https://developer.docebo.com/docs/connector-users
+      parameters:
+      - name: User ID
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteManageV1UserDeleteResponse'
+      x-evidence:
+        kind: documentation
+  /manage/v1/user/{id}:
+    put:
+      operationId: put_manage_v1_user_id
+      tags:
+      - Manage
+      summary: Changed in December 2024; values for Yes/No user additional fields now accept specific formats.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /manage/v1/user/{userId}:
+    get:
+      operationId: get_manage_v1_user_userId
+      tags:
+      - Manage
+      summary: Language field now returns human-readable value instead of internal code.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetManageV1UserUseridResponse'
+      x-evidence:
+        kind: documentation
+  /manage/v1/user_fields:
+    get:
+      operationId: get_manage_v1_user_fields
+      tags:
+      - Manage
+      summary: Retrieve user additional field IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /notifications/v1/notification/list:
+    get:
+      operationId: get_notifications_v1_notification_list
+      tags:
+      - Notifications
+      summary: Removed endpoint with the transition to the new notification service.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /notifications/v1/notification/notifications:
+    get:
+      operationId: get_notifications_v1_notification_notifications
+      tags:
+      - Notifications
+      summary: Removed endpoint with the transition to the new notification service.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /notifications/v1/notification/read:
+    patch:
+      operationId: patch_notifications_v1_notification_read
+      tags:
+      - Notifications
+      summary: Removed endpoint with the transition to the new notification service.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /notifications/v1/notifications_log:
+    get:
+      operationId: get_notifications_v1_notifications_log
+      tags:
+      - Notifications
+      summary: Removed endpoint with the transition to the new notification service.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /notifications/v1/webhooks/{payloadIds}/dlq/batch:
+    delete:
+      operationId: delete_notifications_v1_webhooks_payloadIds_dlq_batch
+      tags:
+      - Notifications
+      summary: Delete messages from the Dead Letter Queue by their IDs.
+      x-source: https://developer.docebo.com/docs/webhooks-error-management
+      parameters:
+      - name: payloadIds
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /notifications/v1/webhooks/{webhookId}/dlq:
+    get:
+      operationId: get_notifications_v1_webhooks_webhookId_dlq
+      tags:
+      - Notifications
+      summary: Retrieve webhook messages that have failed after ten retry attempts from the Dead Letter Queue.
+      x-source: https://developer.docebo.com/docs/webhooks-error-management
+      parameters:
+      - name: webhookId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /oauth2/token:
+    post:
+      operationId: post_oauth2_token
+      tags:
+      - Oauth2
+      summary: Obtain an access token from the LMS to access Docebo APIs.
+      x-source: https://developer.docebo.com/docs/apis-authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostOauth2TokenRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostOauth2TokenResponse'
+      x-evidence:
+        kind: documentation
+  /otj/v1/checklists:
+    get:
+      operationId: get_otj_v1_checklists
+      tags:
+      - Otj
+      summary: Retrieve checklist IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /otj/v1/checklists/{checklistId}/versions:
+    get:
+      operationId: get_otj_v1_checklists_checklistId_versions
+      tags:
+      - Otj
+      summary: Retrieve checklist version IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: checklistId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /pages/v1/menus:
+    get:
+      operationId: get_pages_v1_menus
+      tags:
+      - Pages
+      summary: Retrieve menus IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /pages/v1/pages:
+    get:
+      operationId: get_pages_v1_pages
+      tags:
+      - Pages
+      summary: Retrieve pages IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /poweruser/v1/powerusers:
+    get:
+      operationId: get_poweruser_v1_powerusers
+      tags:
+      - Poweruser
+      summary: Retrieve power user IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPoweruserV1PowerusersResponse'
+      x-evidence:
+        kind: documentation
+  /poweruser/v1/profile:
+    get:
+      operationId: get_poweruser_v1_profile
+      tags:
+      - Poweruser
+      summary: Retrieve power user profile IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPoweruserV1ProfileResponse'
+      x-evidence:
+        kind: documentation
+  /poweruser/v1/profiles/{profileId}/poweruser:
+    get:
+      operationId: get_poweruser_v1_profiles_profileId_poweruser
+      tags:
+      - Poweruser
+      summary: Retrieve power users by profile ID.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: profileId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPoweruserV1ProfilesProfileidPoweruserResponse'
+      x-evidence:
+        kind: documentation
+  /report/v1/mytranscript:
+    get:
+      operationId: get_report_v1_mytranscript
+      tags:
+      - Report
+      summary: Retrieve external training records (transcript) IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /report/v1/privacy_policy/pdf:
+    post:
+      operationId: post_report_v1_privacy_policy_pdf
+      tags:
+      - Report
+      summary: Generate a PDF file that includes charts for the privacy policy.
+      x-source: https://developer.docebo.com/docs/api-browser-technical-information
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /report/v1/query_builder:
+    get:
+      operationId: get_report_v1_query_builder
+      tags:
+      - Report
+      summary: Retrieve query builder report IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /report/v1/report:
+    get:
+      operationId: get_report_v1_report
+      tags:
+      - Report
+      summary: Retrieve legacy reports IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /report/v1/report/{reportId}/data:
+    get:
+      operationId: get_report_v1_report_reportId_data
+      tags:
+      - Report
+      summary: The user.idUser field in the response is now returned as an integer instead of a string.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: reportId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetReportV1ReportReportidDataResponse'
+      x-evidence:
+        kind: documentation
+  /setup/v1/flow/settings:
+    get:
+      operationId: get_setup_v1_flow_settings
+      tags:
+      - Setup
+      summary: GET /setup/v1/flow/settings
+      x-source: https://developer.docebo.com/docs/embedded-learning-building-blocks-1
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSetupV1FlowSettingsResponse'
+      x-evidence:
+        kind: documentation
+  /share/v1/admin/assets:
+    get:
+      operationId: get_share_v1_admin_assets
+      tags:
+      - Share
+      summary: Retrieve the IDs of assets.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/admin/channels:
+    get:
+      operationId: get_share_v1_admin_channels
+      tags:
+      - Share
+      summary: Retrieve the IDs of channels.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/answers:
+    get:
+      operationId: get_share_v1_answers
+      tags:
+      - Share
+      summary: Retrieve the IDs of answers.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/assets:
+    get:
+      operationId: get_share_v1_assets
+      tags:
+      - Share
+      summary: Retrieve the IDs of assets by user.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/channels/{id}/users:
+    get:
+      operationId: get_share_v1_channels_id_users
+      tags:
+      - Share
+      summary: Retrieve users in a channel; email attribute has been removed from response.
+      x-source: https://developer.docebo.com/v1/docs/deprecated-and-changed-api-calls
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/comments:
+    get:
+      operationId: get_share_v1_comments
+      tags:
+      - Share
+      summary: Retrieve the IDs of comments.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/gamification/badges:
+    get:
+      operationId: get_share_v1_gamification_badges
+      tags:
+      - Share
+      summary: Retrieve the IDs of badges.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/gamification/badges/images:
+    get:
+      operationId: get_share_v1_gamification_badges_images
+      tags:
+      - Share
+      summary: Retrieve badge images IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/gamification/collections:
+    get:
+      operationId: get_share_v1_gamification_collections
+      tags:
+      - Share
+      summary: Retrieve the IDs of badges collections.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/gamification/courses/{idCourse}/los:
+    get:
+      operationId: get_share_v1_gamification_courses_idCourse_los
+      tags:
+      - Share
+      summary: Retrieve the IDs of training materials.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: idCourse
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/playlists:
+    get:
+      operationId: get_share_v1_playlists
+      tags:
+      - Share
+      summary: Retrieve the IDs of playlists.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      parameters:
+      - name: type_content
+        in: query
+        required: true
+        schema:
+          type: string
+        description: Possible values are asset or my-course.
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/questions:
+    get:
+      operationId: get_share_v1_questions
+      tags:
+      - Share
+      summary: Retrieve the IDs of questions.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /share/v1/questions/list:
+    get:
+      operationId: get_share_v1_questions_list
+      tags:
+      - Share
+      summary: Retrieve the IDs of questions.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /skill/v1/skillgroups:
+    get:
+      operationId: get_skill_v1_skillgroups
+      tags:
+      - Skill
+      summary: Retrieve skill group IDs.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /skill/v1/skills/catalog:
+    get:
+      operationId: get_skill_v1_skills_catalog
+      tags:
+      - Skill
+      summary: Retrieve skill IDs from the skills catalog.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /skill/v1/workforce/categories:
+    get:
+      operationId: get_skill_v1_workforce_categories
+      tags:
+      - Skill
+      summary: Retrieve the IDs of workforce category list.
+      x-source: https://developer.docebo.com/docs/api-essentials-retrieving-ids
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /token:
+    get:
+      operationId: get_token
+      tags:
+      - Token
+      summary: GET /token
+      x-source: https://developer.docebo.com/docs/activating-and-managing-the-api-and-sso-app.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: httpie
+        snippet: 'http
+
+          https://oauth2/token'
+components:
+  schemas:
+    GetAnalyticsV1CustomReportTypesResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetAnalyticsV1CustomReportTypesActiveResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetAnalyticsV1ReportsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetAudiencesV1AudienceResponse:
+      type: object
+      properties:
+        uuid:
+          type: string
+    GetAudiencesV1AudienceIdGroupToAudienceResponse:
+      type: object
+      properties:
+        uuid:
+          type: string
+    GetAudiencesV1AudienceUuidAudienceToGroupResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetCourseV1CoursesResponse:
+      type: object
+      properties:
+        items[x].price:
+          type: string
+          description: Removed
+        items[x].prices:
+          type: string
+          description: Removed
+    GetCourseV1CoursesIdResponse:
+      type: object
+      properties:
+        data.ecommerce_options:
+          type: string
+          description: Removed
+    PutCourseV1CoursesIdRequest:
+      type: object
+      properties:
+        ecommerce_options:
+          type: string
+          description: Removed
+    GetCourseV1SessionsSessionidEventsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetCourseV1ThumbnailsResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetLearnV1CatalogContentInternalResponse:
+      type: object
+      properties:
+        items[x].currency_prices:
+          type: string
+        item_price:
+          type: string
+          description: Deprecated field
+        affiliate_price:
+          type: string
+          description: Deprecated field
+        prices:
+          type: string
+          description: Deprecated field
+    GetLearnV1CatalogContentInternalCatalogidResponse:
+      type: object
+      properties:
+        items[x].currency_prices:
+          type: string
+        item_price:
+          type: string
+          description: Deprecated field
+        affiliate_price:
+          type: string
+          description: Deprecated field
+        prices:
+          type: string
+          description: Deprecated field
+    GetLearnV1CatalogContentPublicResponse:
+      type: object
+      properties:
+        items[x].data.sub_items[x].currency_prices:
+          type: string
+        item_price:
+          type: string
+          description: Deprecated field
+        affiliate_price:
+          type: string
+          description: Deprecated field
+        prices:
+          type: string
+          description: Deprecated field
+    GetLearnV1CatalogContentPublicCatalogidResponse:
+      type: object
+      properties:
+        items[x].currency_prices:
+          type: string
+        item_price:
+          type: string
+          description: Deprecated field
+        affiliate_price:
+          type: string
+          description: Deprecated field
+        prices:
+          type: string
+          description: Deprecated field
+    GetLearnV1CoursesResponse:
+      type: object
+      properties:
+        currency_prices:
+          type: string
+          description: Added - array with currency_code, price, affiliate_price
+        price:
+          type: string
+          description: Removed
+        affiliate_price:
+          type: string
+          description: Removed
+    PostLearnV1CoursesRequest:
+      type: object
+      properties:
+        selling price:
+          type: string
+          description: Removed
+        prices:
+          type: string
+          description: Removed
+    PostLearnV1CoursesBatchRequest:
+      type: object
+      properties:
+        course_for_sale:
+          type: string
+          description: Removed
+        course_price:
+          type: string
+          description: Removed
+        affiliate_price:
+          type: string
+          description: Removed
+        content_partner_code:
+          type: string
+          description: Removed
+        content_partner_fields:
+          type: string
+          description: Removed
+        field_XX:
+          type: string
+          description: Removed
+    GetLearnV1CoursesCourseidByCategoryResponse:
+      type: object
+      properties:
+        currency_prices:
+          type: string
+          description: Prices now live in currency_prices array with currency_code, price, and affiliate_price
+    DeleteLearnV1EnrollmentCourseidUseridResponse:
+      type: object
+      properties:
+        Deleted Enrollment:
+          type: integer
+          description: The ID of the deleted enrollment record
+    DeleteLearnV1EnrollmentsResponse:
+      type: object
+      properties:
+        Unenrolled:
+          type: array
+          description: An array of user IDs that were successfully unenrolled
+    PostLearnV1EnrollmentsResponse:
+      type: object
+      properties:
+        notification_ids:
+          type: array
+          description: Changed to an array of strings
+    PostLearnV1EnrollmentsCourseidUseridRequest:
+      type: object
+      properties:
+        User ID:
+          type: integer
+          description: The user ID to enroll
+        Course ID:
+          type: integer
+          description: The ID of the course in which the user will be enrolled
+        Level:
+          type: integer
+          description: 'The user level. Possible values allowed are: 3 for student, 4 for tutor, 6 for instructor'
+        Date begin validity:
+          type: string
+          description: The start date of the enrollment
+        Date end validity:
+          type: string
+          description: The expiration date of the enrollment
+        Enrollment fields:
+          type: object
+          description: Custom fields related to the enrollment (dynamic fields are shown here)
+      required:
+      - User ID
+      - Course ID
+    PostLearnV1EnrollmentsCourseidUseridResponse:
+      type: object
+      properties:
+        Enrolled:
+          type: array
+          description: List of successfully enrolled users or courses
+        User ID:
+          type: integer
+          description: The ID of the enrolled user
+        Course ID:
+          type: integer
+          description: The ID of the enrolled course
+        Waiting:
+          type: boolean
+          description: Returns true if the user is on a waiting list, otherwise false
+    PostLearnV1LoIdTrackRequest:
+      type: object
+      properties:
+        type:
+          type: string
+          description: The type of tracking (e.g., submission, comment_reply, start, continue, next, prev, submit_partial, submit, time_elapsed_submit,
+            time_enabled_force_exit, review)
+        submission:
+          type: object
+          description: The data payload for assignment tracking (required for assignment type submissions)
+        id:
+          type: integer
+          description: The reply identifier (required only when type is comment_reply)
+        learner_reply:
+          type: string
+          description: The text of the reply (required only when type is comment_reply)
+        name:
+          type: string
+          description: The title of the submitted assignment (required only when type is submission)
+        description:
+          type: string
+          description: An optional description of the submitted assignment
+        files:
+          type: array
+          description: An array of uploaded S3 file URLs (required only when type is submission)
+        video_url:
+          type: string
+          description: The URL submitted in the assignment (required only when type is submission)
+        action:
+          type: string
+          description: The action to perform on this quiz (required for quiz type)
+        questions:
+          type: object
+          description: An object containing the quiz answers to submit, indexed by question ID (required for quiz type)
+        user_status:
+          type: object
+          description: User status information
+        answer:
+          type: integer
+          description: The answer to this question (required for certain question types)
+        answers:
+          type: object
+          description: An object containing a list of answers (required for certain question types)
+        bookmark:
+          type: integer
+          description: The last slide number played by the learner (for slides) or video offset reached by the user (for video)
+        complete:
+          type: boolean
+          description: Set to TRUE if the video is completed (for video type)
+        submitted:
+          type: boolean
+          description: Submit the poll as completed (for survey type)
+      required:
+      - type
+    PostLearnV1LoIdTrackResponse:
+      type: object
+      properties:
+        acknowledge:
+          type: object
+          description: Acknowledgment response object
+        id:
+          type: integer
+          description: The internal ID of the submitted item (returned only when type is submission)
+        url:
+          type: string
+          description: The URL of the S3 file or Google Drive file
+        content:
+          type: string
+          description: The HTML content to display
+        questions:
+          type: array
+          description: An array of questions for the requested page
+        page_number:
+          type: integer
+          description: The page number, returned only if there is a previous or next page
+        user_status:
+          type: object
+          description: The user status information for the current test
+        status:
+          type: string
+          description: The current quiz status for this user
+        score:
+          type: number
+          description: The current calculated score for the user
+        evaluation_status:
+          type: string
+          description: If status is submitted, this contains the evaluation status
+        completion_status:
+          type: string
+          description: The completion status
+        suspension_time:
+          type: integer
+          description: How many minutes the user should wait before the test is unsuspended
+        time_consumed:
+          type: string
+          description: Tracks the amount of time consumed by the user
+        attempts_consumed:
+          type: integer
+          description: Tracks the number of attempts consumed by the user
+        feedback_message:
+          type: string
+          description: An optional message that depends on the actual user score
+        score_per_category:
+          type: array
+          description: An optional array containing the calculated scores divided by category
+        average_user_score:
+          type: number
+          description: The average score of other users who have already completed the test
+        show_results:
+          type: boolean
+          description: Returns TRUE if the results should be displayed, otherwise returns FALSE
+        is_completed:
+          type: boolean
+          description: Returns TRUE if the question is completed, otherwise returns FALSE
+    GetLearnV1LpLpidResponse:
+      type: object
+      properties:
+        currency_prices:
+          type: string
+          description: Prices now live in currency_prices array with currency_code and price
+        courses[x].currency_prices:
+          type: string
+          description: Course prices now live in currency_prices array
+    GetLearnV1SubPlanResponse:
+      type: object
+      properties:
+        items[X].plan_price:
+          type: string
+          description: Deprecated field
+        items[X].prices:
+          type: string
+    PostLearnV1SubPlanRequest:
+      type: object
+      properties:
+        price:
+          type: string
+          description: Deprecated field
+        prices:
+          type: string
+    PostLearnV1SubPlanResponse:
+      type: object
+      properties:
+        data.prices:
+          type: string
+    PostLearnV1SubPlanBatchRequest:
+      type: object
+      properties:
+        items[x].prices:
+          type: string
+      required:
+      - items[x].prices
+    GetLearnV1SubPlanPlanidResponse:
+      type: object
+      properties:
+        prices:
+          type: string
+        subscription_records[X].renewal_price:
+          type: string
+    PutLearnV1SubPlanPlanidRequest:
+      type: object
+      properties:
+        price:
+          type: string
+          description: Deprecated field
+        prices:
+          type: string
+    PutLearnV1SubPlanPlanidResponse:
+      type: object
+      properties:
+        data.prices:
+          type: string
+    GetLearnV1SubRecordResponse:
+      type: object
+      properties:
+        data.items[n].price.currency:
+          type: string
+        data.items[n].price.value:
+          type: string
+    PostLearnV1SubRecordRequest:
+      type: object
+      properties:
+        price:
+          type: object
+    GetLearnV1SubRecordIdrecordResponse:
+      type: object
+      properties:
+        data.subscription_record.price.currency:
+          type: string
+        data.subscription_record.price.value:
+          type: string
+    PutLearnV1SubRecordIdrecordRequest:
+      type: object
+      properties:
+        price:
+          type: object
+    PostLearningplanV1LearningplansRequest:
+      type: object
+      properties:
+        ecommerce_options:
+          type: string
+          description: Dropped field; set on-sale status and price after creation with PUT /ecommerce/v1/admin/prices/learning-plans/{id}
+    PutLearningplanV1LearningplansLearningplanidRequest:
+      type: object
+      properties:
+        ecommerce_options:
+          type: string
+          description: Dropped field; set on-sale status and price with PUT /ecommerce/v1/admin/prices/learning-plans/{id}
+    GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen:
+      type: object
+      properties:
+        Items:
+          type: array
+          description: The repeatable list of enrollment records for courses inside the Learning Plan
+        User ID:
+          type: integer
+          description: The ID of the enrolled user
+        Username:
+          type: string
+          description: The user's username
+        Course ID:
+          type: integer
+          description: The ID of the enrolled course
+        Course uid:
+          type: string
+          description: The unique identifier of the course
+        Course code:
+          type: string
+          description: The code of the course
+        Course name:
+          type: string
+          description: The name of the course
+        Course type:
+          type: string
+          description: The type of course (for example, elearning, classroom)
+        Course begin date:
+          type: string
+          description: The official begin date for the course content
+        Course end date:
+          type: string
+          description: The official end date for the course content
+        Enrollment level:
+          type: string
+          description: The user's level in the course enrollment (for example, student, instructor)
+        Enrollment status:
+          type: string
+          description: The current status of the enrollment (for example, enrolled, completed)
+        Enrollment created by:
+          type: integer
+          description: The ID of the user who performed the enrollment
+        Enrollment created at:
+          type: string
+          description: The date the enrollment was created
+        Enrollment validity begin date:
+          type: string
+          description: The date the enrollment validity begins
+        Enrollment validity end date:
+          type: string
+          description: The date the enrollment validity ends
+        Enrollment date last updated:
+          type: string
+          description: The last date the enrollment status was updated
+        Enrollment completion date:
+          type: string
+          description: The date the enrollment status became completed
+        Enrollment score:
+          type: integer
+          description: The score achieved in the course
+        Enrollment time spent:
+          type: integer
+          description: The time spent in the course (in seconds)
+        Count:
+          type: integer
+          description: The number of results in the current page
+        Has more data:
+          type: boolean
+          description: Returns true if there are more pages of results
+        Cursor:
+          type: string
+          description: Cursor string for fetching the next page
+        Current page:
+          type: integer
+          description: The current page number
+        Current page size:
+          type: integer
+          description: The number of results per page returned
+        Total page count:
+          type: integer
+          description: The total number of pages available
+        Total count:
+          type: integer
+          description: The total number of all matching record
+        Sort:
+          type: array
+          description: Details about the sorting applied to the results
+    GetManageV1EnrollmentRulesResponse:
+      type: object
+      properties:
+        notification_ids:
+          type: array
+          description: Changed to an array of strings
+    GetManageV1EnrollmentRulesEnrollmentruleidResponse:
+      type: object
+      properties:
+        notification_ids:
+          type: array
+          description: Changed to an array of strings
+    GetManageV1MobileBootstrapResponse:
+      type: object
+      properties:
+        is_session_valid:
+          type: boolean
+    GetManageV1SiteBootstrapResponse:
+      type: object
+      properties:
+        data.settings.currency_settings.currency:
+          type: string
+          description: Removed
+        data.settings.currency_settings.currency_symbol:
+          type: string
+          description: Removed
+        data.ecommerce_settings.currency_configuration:
+          type: string
+          description: Added
+    PostManageV1UserBatchDeleteRequest:
+      type: object
+      properties:
+        User IDs:
+          type: array
+      required:
+      - User IDs
+    PostManageV1UserBatchDeleteResponse:
+      type: object
+      properties:
+        Deleted Users:
+          type: array
+    DeleteManageV1UserDeleteResponse:
+      type: object
+      properties:
+        Success:
+          type: boolean
+    GetManageV1UserUseridResponse:
+      type: object
+      properties:
+        language:
+          type: string
+    PostOauth2TokenRequest:
+      type: object
+      properties:
+        grant_type:
+          type: string
+          description: OAuth 2.0 grant type (e.g., password, client_credentials, urn:ietf:params:oauth:grant-type:jwt-bearer)
+        scope:
+          type: string
+          description: Set of resources and operations the access token permits
+        client_id:
+          type: string
+          description: OAuth 2.0 app client ID
+        client_secret:
+          type: string
+          description: OAuth 2.0 app client secret
+        username:
+          type: string
+          description: Username for Resource Owner Password Credentials grant type
+        password:
+          type: string
+          description: Password for Resource Owner Password Credentials grant type
+        assertion:
+          type: string
+          description: Encoded JWT token for JWT Bearer grant type
+      required:
+      - grant_type
+      - scope
+      - client_id
+    PostOauth2TokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+          description: The access token to be used in API calls
+        expires_in:
+          type: integer
+          description: Token expiration time in seconds
+        token_type:
+          type: string
+          description: Type of token (Bearer)
+        scope:
+          type: string
+          description: The scope of the access token
+        refresh_token:
+          type: string
+          description: Refresh token for obtaining new access tokens
+    GetPoweruserV1PowerusersResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetPoweruserV1ProfileResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetPoweruserV1ProfilesProfileidPoweruserResponse:
+      type: object
+      properties:
+        id:
+          type: string
+    GetReportV1ReportReportidDataResponse:
+      type: object
+      properties:
+        user.idUser:
+          type: integer
+    GetSetupV1FlowSettingsResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Container for the response data
+        data.kernel_url:
+          type: string
+          description: Deprecated kernel URL (do not use)
+        data.sdk_kernel_url:
+          type: string
+          description: The building blocks kernel URL to be used for loading the SDK
+        version:
+          type: string
+          description: The Docebo API version
+        _links:
+          type: array
+          description: Links array
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Analytics
+- name: Api
+- name: Api Browser
+- name: Audiences
+- name: Authorize
+- name: Catalogmanagement
+- name: Course
+- name: Ecommerce
+- name: Enrollment
+- name: Learn
+- name: Learningplan
+- name: Loki
+- name: Manage
+- name: Notifications
+- name: Oauth2
+- name: Otj
+- name: Pages
+- name: Poweruser
+- name: Report
+- name: Setup
+- name: Share
+- name: Skill
+- name: Token

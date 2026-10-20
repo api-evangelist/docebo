@@ -1,10 +1,11 @@
 aid: docebo
+
 name: Docebo
-description: Docebo is an AI-powered learning management system (LMS) platform providing
-  a REST API for managing courses, users, learning plans, certifications, custom reports,
-  gamification data, and e-commerce transactions. It serves enterprise and mid-market
-  organizations with 250+ learners across employee, customer, and partner training
-  use cases.
+
+description: Docebo is an AI-powered learning management system (LMS) platform providing a REST API for managing courses, users, learning plans,
+  certifications, custom reports, gamification data, and e-commerce transactions. It serves enterprise and mid-market organizations with 250+
+  learners across employee, customer, and partner training use cases.
+
 deliveryModel:
   model: saas
   open_source: false
@@ -16,6 +17,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: enterprise
   onboarding: unknown
@@ -28,11 +30,17 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/docebo.png
+
 url: https://raw.githubusercontent.com/api-evangelist/docebo/refs/heads/main/apis.yml
+
 created: '2026-06-13'
+
 modified: '2026-10-06'
+
 specificationVersion: '0.23'
+
 tags:
 - LMS
 - E-Learning
@@ -43,6 +51,7 @@ tags:
 - Learning Plans
 - Human Resources
 - AI Learning
+
 tags_raw:
 - Learning Management System
 - LMS
@@ -54,11 +63,85 @@ tags_raw:
 - Learning Plans
 - HR Tech
 - AI Learning
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+
+common:
+- type: Spectral
+  url: rules/docebo-rules.yml
+- type: JSONLD
+  url: json-ld/docebo-context.jsonld
+- type: Vocabulary
+  url: vocabulary/docebo-vocabulary.yml
+- type: DataModel
+  url: data-model/docebo-data-model.yml
+- type: Compliance
+  url: https://www.docebo.com/company/compliance-security/
+- type: Conformance
+  url: conformance/docebo-conformance.yml
+- type: LLMsTxt
+  url: llms/docebo-llms.txt
+- type: MCPServer
+  url: mcp/docebo-mcp.yml
+- type: SecurityTxt
+  url: well-known/docebo-status-security.txt
+- type: WellKnown
+  url: well-known/docebo-well-known.yml
+- type: Hosts
+  url: hosts/docebo-hosts.yml
+- type: IntegrationEdges
+  url: integrations/docebo-integration-edges.yml
+- type: TermsOfService
+  url: https://community.docebo.com/site/terms
+- type: PrivacyPolicy
+  url: https://www.docebo.com/company/privacy-policy/
+- type: Pricing
+  url: https://www.docebo.com/pricing/
+- type: Newsroom
+  url: https://www.docebo.com/newsroom/
+- type: TrustCenter
+  url: security/docebo-trust-center.yml
+- url: https://www.docebo.com/feed/
+  type: BlogRSS
+- type: Website
+  url: https://www.docebo.com/
+- type: DomainSecurity
+  url: security/docebo-domain-security.yml
+- type: Documentation
+  url: https://developer.docebo.com/docs/api-general-information
+- type: Portal
+  url: https://developer.docebo.com
+- type: Authentication
+  url: https://developer.docebo.com/docs/api-guides
+- type: Webhooks
+  url: https://developer.docebo.com
+- type: ChangeLog
+  url: https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls
+- type: StatusPage
+  url: https://status.docebo.com
+- type: Blog
+  url: https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/
+- type: Community
+  url: https://community.docebo.com/integrations-apis-45
+- type: ReleaseNotes
+  url: https://help.docebo.com/hc/en-us/articles/19807231971474-Product-updates
+- type: Plans
+  url: plans/docebo-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/docebo-rate-limits.yml
+- type: FinOps
+  url: finops/docebo-finops.yml
+- type: JSONLD
+  url: json-ld/docebo.json
+- type: BlogPosts
+  url: blogs/blogs.json
+
 apis:
 - name: Docebo REST API
-  description: RESTful API for managing all aspects of the Docebo learning platform
-    including courses, users, enrollments, certifications, learning plans, reports,
-    gamification, and e-commerce.
+  description: RESTful API for managing all aspects of the Docebo learning platform including courses, users, enrollments, certifications, learning
+    plans, reports, gamification, and e-commerce.
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://developer.docebo.com/docs/api-general-information
   baseURL: https://{domain}.docebosaas.com
@@ -98,41 +181,41 @@ apis:
   contact:
   - FN: Docebo Support
     url: https://help.docebo.com
-common:
-- url: https://www.docebo.com/feed/
-  type: BlogRSS
-- type: Website
-  url: https://www.docebo.com/
-- type: DomainSecurity
-  url: security/docebo-domain-security.yml
-- type: Documentation
-  url: https://developer.docebo.com/docs/api-general-information
-- type: Portal
-  url: https://developer.docebo.com
-- type: Authentication
-  url: https://developer.docebo.com/docs/api-guides
-- type: Webhooks
-  url: https://developer.docebo.com
-- type: ChangeLog
-  url: https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls
-- type: Status
-  url: https://status.docebo.com
-- type: Blog
-  url: https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/
-- type: Community
-  url: https://community.docebo.com/integrations-apis-45
-- type: ReleaseNotes
-  url: https://help.docebo.com/hc/en-us/articles/19807231971474-Product-updates
-- type: Plans
-  url: plans/docebo-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/docebo-rate-limits.yml
-- type: FinOps
-  url: finops/docebo-finops.yml
-- type: JSONLD
-  url: json-ld/docebo.json
-- type: BlogPosts
-  url: blogs/blogs.json
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  aid: docebo:docebo-rest-api
+- aid: docebo:docebo-api
+  name: Docebo API
+  description: 'Docebo API as documented publicly: 184 operations. Contract generated from the documentation by API Evangelist (2026-10-20); not
+
+    the provider''s own document.'
+  humanURL: https://developer.docebo.com/v1/docs/apis-authentication
+  baseURL: https://yourdomain.docebosaas.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/docebo-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/docebo-get-learningplan-v1-learningplans-learningplanid-courses-enrollmen-schema.json
+  - type: JSONSchema
+    url: json-schema/docebo-post-learn-v1-lo-id-track-response-schema.json
+  - type: JSONSchema
+    url: json-schema/docebo-post-learn-v1-lo-id-track-request-schema.json
+  - type: JSONSchema
+    url: json-schema/docebo-post-oauth2-token-request-schema.json
+  - type: JSONSchema
+    url: json-schema/docebo-post-learn-v1-enrollments-courseid-userid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/docebo-post-oauth2-token-response-schema.json
+
+x-coverage:
+  state: covered
+  reason: enriched
+  detail: Docebo documents a per-platform REST API (docs-generated contract) and a hosted OAuth MCP server at https://[docebo-instance-name]/mcp/servers/[server-path]/http.
+  evidence:
+  - url: https://developer.docebo.com/docs/supported-mcp-tools
+    status: 200
+  checked: '2026-10-20'
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v5

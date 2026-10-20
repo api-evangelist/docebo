@@ -1,0 +1,415 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/docebo-openapi-generated.yml
+vocabulary:
+  name: Docebo Domain Vocabulary
+  description: 'Terms declared by Docebo''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-20'
+  terms:
+  - term: GetAnalyticsV1CustomReportTypesResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetAnalyticsV1CustomReportTypesResponse
+  - term: GetAnalyticsV1CustomReportTypesActiveResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetAnalyticsV1CustomReportTypesActiveResponse
+  - term: GetAnalyticsV1ReportsResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetAnalyticsV1ReportsResponse
+  - term: GetAudiencesV1AudienceResponse
+    definition: 'Object declared by the contract with fields: uuid.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetAudiencesV1AudienceResponse
+  - term: GetAudiencesV1AudienceIdGroupToAudienceResponse
+    definition: 'Object declared by the contract with fields: uuid.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetAudiencesV1AudienceIdGroupToAudienceResponse
+  - term: GetAudiencesV1AudienceUuidAudienceToGroupResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetAudiencesV1AudienceUuidAudienceToGroupResponse
+  - term: GetCourseV1CoursesResponse
+    definition: 'Object declared by the contract with fields: items[x].price, items[x].prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetCourseV1CoursesResponse
+  - term: GetCourseV1CoursesIdResponse
+    definition: 'Object declared by the contract with fields: data.ecommerce_options.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetCourseV1CoursesIdResponse
+  - term: PutCourseV1CoursesIdRequest
+    definition: 'Object declared by the contract with fields: ecommerce_options.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PutCourseV1CoursesIdRequest
+  - term: GetCourseV1SessionsSessionidEventsResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetCourseV1SessionsSessionidEventsResponse
+  - term: GetCourseV1ThumbnailsResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetCourseV1ThumbnailsResponse
+  - term: GetLearnV1CatalogContentInternalResponse
+    definition: 'Object declared by the contract with fields: items[x].currency_prices, item_price, affiliate_price, prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1CatalogContentInternalResponse
+  - term: GetLearnV1CatalogContentInternalCatalogidResponse
+    definition: 'Object declared by the contract with fields: items[x].currency_prices, item_price, affiliate_price, prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1CatalogContentInternalCatalogidResponse
+  - term: GetLearnV1CatalogContentPublicResponse
+    definition: 'Object declared by the contract with fields: items[x].data.sub_items[x].currency_prices, item_price, affiliate_price, prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1CatalogContentPublicResponse
+  - term: GetLearnV1CatalogContentPublicCatalogidResponse
+    definition: 'Object declared by the contract with fields: items[x].currency_prices, item_price, affiliate_price, prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1CatalogContentPublicCatalogidResponse
+  - term: GetLearnV1CoursesResponse
+    definition: 'Object declared by the contract with fields: currency_prices, price, affiliate_price.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1CoursesResponse
+  - term: PostLearnV1CoursesRequest
+    definition: 'Object declared by the contract with fields: selling price, prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1CoursesRequest
+  - term: PostLearnV1CoursesBatchRequest
+    definition: 'Object declared by the contract with fields: course_for_sale, course_price, affiliate_price, content_partner_code, content_partner_fields,
+      field_XX.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1CoursesBatchRequest
+  - term: GetLearnV1CoursesCourseidByCategoryResponse
+    definition: 'Object declared by the contract with fields: currency_prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1CoursesCourseidByCategoryResponse
+  - term: DeleteLearnV1EnrollmentCourseidUseridResponse
+    definition: 'Object declared by the contract with fields: Deleted Enrollment.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/DeleteLearnV1EnrollmentCourseidUseridResponse
+  - term: DeleteLearnV1EnrollmentsResponse
+    definition: 'Object declared by the contract with fields: Unenrolled.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/DeleteLearnV1EnrollmentsResponse
+  - term: PostLearnV1EnrollmentsResponse
+    definition: 'Object declared by the contract with fields: notification_ids.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1EnrollmentsResponse
+  - term: PostLearnV1EnrollmentsCourseidUseridRequest
+    definition: 'Object declared by the contract with fields: User ID, Course ID, Level, Date begin validity, Date end validity, Enrollment fields.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1EnrollmentsCourseidUseridRequest
+  - term: PostLearnV1EnrollmentsCourseidUseridResponse
+    definition: 'Object declared by the contract with fields: Enrolled, User ID, Course ID, Waiting.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1EnrollmentsCourseidUseridResponse
+  - term: PostLearnV1LoIdTrackRequest
+    definition: 'Object declared by the contract with fields: type, submission, id, learner_reply, name, description, files, video_url, action,
+      questions, user_status, answer. (4 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1LoIdTrackRequest
+  - term: PostLearnV1LoIdTrackResponse
+    definition: 'Object declared by the contract with fields: acknowledge, id, url, content, questions, page_number, user_status, status, score,
+      evaluation_status, completion_status, suspension_time. (7 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1LoIdTrackResponse
+  - term: GetLearnV1LpLpidResponse
+    definition: 'Object declared by the contract with fields: currency_prices, courses[x].currency_prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1LpLpidResponse
+  - term: GetLearnV1SubPlanResponse
+    definition: 'Object declared by the contract with fields: items[X].plan_price, items[X].prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1SubPlanResponse
+  - term: PostLearnV1SubPlanRequest
+    definition: 'Object declared by the contract with fields: price, prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1SubPlanRequest
+  - term: PostLearnV1SubPlanResponse
+    definition: 'Object declared by the contract with fields: data.prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1SubPlanResponse
+  - term: PostLearnV1SubPlanBatchRequest
+    definition: 'Object declared by the contract with fields: items[x].prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1SubPlanBatchRequest
+  - term: GetLearnV1SubPlanPlanidResponse
+    definition: 'Object declared by the contract with fields: prices, subscription_records[X].renewal_price.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1SubPlanPlanidResponse
+  - term: PutLearnV1SubPlanPlanidRequest
+    definition: 'Object declared by the contract with fields: price, prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PutLearnV1SubPlanPlanidRequest
+  - term: PutLearnV1SubPlanPlanidResponse
+    definition: 'Object declared by the contract with fields: data.prices.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PutLearnV1SubPlanPlanidResponse
+  - term: GetLearnV1SubRecordResponse
+    definition: 'Object declared by the contract with fields: data.items[n].price.currency, data.items[n].price.value.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1SubRecordResponse
+  - term: PostLearnV1SubRecordRequest
+    definition: 'Object declared by the contract with fields: price.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearnV1SubRecordRequest
+  - term: GetLearnV1SubRecordIdrecordResponse
+    definition: 'Object declared by the contract with fields: data.subscription_record.price.currency, data.subscription_record.price.value.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearnV1SubRecordIdrecordResponse
+  - term: PutLearnV1SubRecordIdrecordRequest
+    definition: 'Object declared by the contract with fields: price.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PutLearnV1SubRecordIdrecordRequest
+  - term: PostLearningplanV1LearningplansRequest
+    definition: 'Object declared by the contract with fields: ecommerce_options.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostLearningplanV1LearningplansRequest
+  - term: PutLearningplanV1LearningplansLearningplanidRequest
+    definition: 'Object declared by the contract with fields: ecommerce_options.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PutLearningplanV1LearningplansLearningplanidRequest
+  - term: GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen
+    definition: 'Object declared by the contract with fields: Items, User ID, Username, Course ID, Course uid, Course code, Course name, Course
+      type, Course begin date, Course end date, Enrollment level, Enrollment status. (16 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen
+  - term: GetManageV1EnrollmentRulesResponse
+    definition: 'Object declared by the contract with fields: notification_ids.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetManageV1EnrollmentRulesResponse
+  - term: GetManageV1EnrollmentRulesEnrollmentruleidResponse
+    definition: 'Object declared by the contract with fields: notification_ids.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetManageV1EnrollmentRulesEnrollmentruleidResponse
+  - term: GetManageV1MobileBootstrapResponse
+    definition: 'Object declared by the contract with fields: is_session_valid.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetManageV1MobileBootstrapResponse
+  - term: GetManageV1SiteBootstrapResponse
+    definition: 'Object declared by the contract with fields: data.settings.currency_settings.currency, data.settings.currency_settings.currency_symbol,
+      data.ecommerce_settings.currency_configuration.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetManageV1SiteBootstrapResponse
+  - term: PostManageV1UserBatchDeleteRequest
+    definition: 'Object declared by the contract with fields: User IDs.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostManageV1UserBatchDeleteRequest
+  - term: PostManageV1UserBatchDeleteResponse
+    definition: 'Object declared by the contract with fields: Deleted Users.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostManageV1UserBatchDeleteResponse
+  - term: DeleteManageV1UserDeleteResponse
+    definition: 'Object declared by the contract with fields: Success.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/DeleteManageV1UserDeleteResponse
+  - term: GetManageV1UserUseridResponse
+    definition: 'Object declared by the contract with fields: language.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetManageV1UserUseridResponse
+  - term: PostOauth2TokenRequest
+    definition: 'Object declared by the contract with fields: grant_type, scope, client_id, client_secret, username, password, assertion.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostOauth2TokenRequest
+  - term: PostOauth2TokenResponse
+    definition: 'Object declared by the contract with fields: access_token, expires_in, token_type, scope, refresh_token.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/PostOauth2TokenResponse
+  - term: GetPoweruserV1PowerusersResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetPoweruserV1PowerusersResponse
+  - term: GetPoweruserV1ProfileResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetPoweruserV1ProfileResponse
+  - term: GetPoweruserV1ProfilesProfileidPoweruserResponse
+    definition: 'Object declared by the contract with fields: id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetPoweruserV1ProfilesProfileidPoweruserResponse
+  - term: GetReportV1ReportReportidDataResponse
+    definition: 'Object declared by the contract with fields: user.idUser.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetReportV1ReportReportidDataResponse
+  - term: GetSetupV1FlowSettingsResponse
+    definition: 'Object declared by the contract with fields: data, data.kernel_url, data.sdk_kernel_url, version, _links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/docebo-openapi-generated.yml#/components/schemas/GetSetupV1FlowSettingsResponse
+  - term: Api
+    definition: 'Resource group in the contract; its operation GET /: GET /'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Analytics
+    definition: 'Resource group in the contract; its operation GET /analytics/v1/custom-report-types: Retrieve query builder reports IDs for custom
+      report types.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Api Browser
+    definition: 'Resource group in the contract; its operation GET /api-browser: GET /api-browser'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Audiences
+    definition: 'Resource group in the contract; its operation GET /audiences/v1/audience: Retrieve audience IDs (Group).'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Authorize
+    definition: 'Resource group in the contract; its operation GET /authorize: GET /authorize'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Catalogmanagement
+    definition: 'Resource group in the contract; its operation GET /catalogmanagement/v1/catalogs/{id}/courses: Values price and training_credits
+      are no longer valid in sort_attr, and price_min / price_max query parameters are removed; the response drops items[x].ecommerce.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Course
+    definition: 'Resource group in the contract; its operation GET /course/v1/courses: Price is no longer a valid sort_attr; items[x].price and
+      items[x].prices are dropped.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Ecommerce
+    definition: 'Resource group in the contract; its operation GET /ecommerce/v1/admin/prices/courses: Pull course prices.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Enrollment
+    definition: 'Resource group in the contract; its operation GET /enrollment/v1/courses/archives/{recordId}/sessions: Retrieve the session list
+      of archived course enrollments.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Learn
+    definition: 'Resource group in the contract; its operation GET /learn: GET /learn'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Learningplan
+    definition: 'Resource group in the contract; its operation GET /learningplan/v1/learningplans: The response drops items[X].price and items[X].prices.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Loki
+    definition: 'Resource group in the contract; its operation GET /loki/share/v1/assets/{assetId}: Retrieve asset endpoint that has been removed.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Manage
+    definition: 'Resource group in the contract; its operation GET /manage/v1/channels: Retrieve the IDs of channels.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Notifications
+    definition: 'Resource group in the contract; its operation GET /notifications/v1/notification/list: Removed endpoint with the transition to
+      the new notification service.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Oauth2
+    definition: 'Resource group in the contract; its operation POST /oauth2/token: Obtain an access token from the LMS to access Docebo APIs.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Otj
+    definition: 'Resource group in the contract; its operation GET /otj/v1/checklists: Retrieve checklist IDs.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Pages
+    definition: 'Resource group in the contract; its operation GET /pages/v1/menus: Retrieve menus IDs.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Poweruser
+    definition: 'Resource group in the contract; its operation GET /poweruser/v1/powerusers: Retrieve power user IDs.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Report
+    definition: 'Resource group in the contract; its operation GET /report/v1/mytranscript: Retrieve external training records (transcript) IDs.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Setup
+    definition: 'Resource group in the contract; its operation GET /setup/v1/flow/settings: GET /setup/v1/flow/settings'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Share
+    definition: 'Resource group in the contract; its operation GET /share/v1/admin/assets: Retrieve the IDs of assets.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Skill
+    definition: 'Resource group in the contract; its operation GET /skill/v1/skillgroups: Retrieve skill group IDs.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
+  - term: Token
+    definition: 'Resource group in the contract; its operation GET /token: GET /token'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/docebo-openapi-generated.yml
