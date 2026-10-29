@@ -66,55 +66,138 @@
 
 Docebo is an AI-powered learning management system (LMS) platform providing a REST API for managing courses, users, learning plans, certifications, custom reports, gamification data, and e-commerce transactions. It serves enterprise and mid-market organizations with 250+ learners across employee, customer, and partner training use cases.
 
-## API
+**Areas:** LMS · E-Learning · Training · Courses · Certification · Gamification · Learning Plans · Human Resources · AI Learning
 
-- **Developer Portal**: https://developer.docebo.com
-- **API Documentation**: https://developer.docebo.com/docs/api-general-information
-- **Status Page**: https://status.docebo.com
-- **Blog (APIs & Webhooks)**: https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/
-- **Community (Integrations & APIs)**: https://community.docebo.com/integrations-apis-45
-- **Changelog**: https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls
+## Docebo on APIs.io
 
-## Authentication
+Everything profiled for Docebo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/docebo/](https://apis.io/providers/docebo/)** — or go straight to one of the APIs or properties below.
 
-Docebo uses OAuth 2.0 `client_credentials` grant. Obtain a Bearer token via POST to:
+### APIs (2)
 
-```
-POST https://{domain}.docebosaas.com/oauth2/token
-```
+- [Docebo REST API](https://apis.io/apis/docebo/docebo-rest-api/) — RESTful API for managing all aspects of the Docebo learning platform including courses, users, enrollments, certifications, learning plans, reports,…
+- [Docebo API](https://apis.io/apis/docebo/docebo-api/) — Docebo API as documented publicly: 184 operations. Contract generated from the documentation by API Evangelist (2026-10-20); not the provider's own document.
 
-Include the token as `Authorization: Bearer <token>` in all subsequent API requests. Tokens expire after 3600 seconds.
+### Published properties
 
-## API Services
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Service | Coverage |
-|---------|----------|
-| Learn | E-learning, vILT courses/sessions, external training |
-| Skill | User skill management, Manager/My Team, talent integrations |
-| Share | Coach & Share assets, channels, Q&A, experts, gamification |
-| Manage | User management, enrollment rules, background jobs, mobile app |
-| Notifications | Notification endpoints and DKIM configuration |
-| E-commerce | Transactions, billing, e-commerce configuration |
-| Marketplace | Content provider integrations (GO1, LinkedIn Learning, OpenSesame) |
-| Report | Dashboard data, custom reports, Query Builder Reports |
-| Pages | Menu and page management |
-| OTJ | Observation checklists and approval workflows |
-| Audittrail | Audit trail queries and logs |
-| Course | E-learning/ILT courses, events, sessions, thumbnails |
-| Analytics | Query builder, custom reports, dashboards |
-| Audiences | Group and user management |
-| Poweruser | Power user permissions and profiles |
-| Learningplan | Learning plan management and enrollment |
-| Certification | Awarded certification endpoints |
+#### GraphQL (1)
 
-## Pricing
+GraphQL schemas.
 
-Docebo offers two main tiers — **Elevate** and **Enterprise** — both with custom (contact-sales) pricing, starting around $25,000/year. Pricing is based on active learners (MAU, YAU, or RAU model). See [plans/docebo-plans-pricing.yml](plans/docebo-plans-pricing.yml) for details.
+- [Moved to /providers/docebo/](https://apis.io/graphqls/docebo/docebo-graphql/)
 
-## Rate Limits
+#### JSON Schema (6)
 
-Enterprise plans include 100 API calls/minute. Elevate plans have standard limits (not publicly specified). HTTP 429 responses indicate rate limit exceeded; exponential backoff is recommended. See [rate-limits/docebo-rate-limits.yml](rate-limits/docebo-rate-limits.yml) for details.
+The data models the API reads and writes.
 
-## FinOps
+- [GetLearningplanV1LearningplansLearningplanidCoursesEnrollmen](https://apis.io/schemas/docebo/docebo-get-learningplan-v1-learningplans-learningplanid-courses-enrollmen/)
+- [PostLearnV1EnrollmentsCourseidUseridRequest](https://apis.io/schemas/docebo/docebo-post-learn-v1-enrollments-courseid-userid-request/)
+- [PostLearnV1LoIdTrackRequest](https://apis.io/schemas/docebo/docebo-post-learn-v1-lo-id-track-request/)
+- [PostLearnV1LoIdTrackResponse](https://apis.io/schemas/docebo/docebo-post-learn-v1-lo-id-track-response/)
+- [PostOauth2TokenRequest](https://apis.io/schemas/docebo/docebo-post-oauth2-token-request/)
+- [PostOauth2TokenResponse](https://apis.io/schemas/docebo/docebo-post-oauth2-token-response/)
 
-Key cost drivers include active user count, integration count, AI content credits, and API rate limit tier. See [finops/docebo-finops.yml](finops/docebo-finops.yml) for optimization strategies.
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Docebo Context](https://apis.io/jsonld/docebo/docebo-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Docebo API Rules](https://apis.io/rules/docebo/docebo-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Docebo Domain Security](https://apis.io/security/docebo/docebo-domain-security/)
+- [Docebo Trust Center](https://apis.io/security/docebo/docebo-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Docebo Plans Pricing](https://apis.io/plans/docebo/docebo-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Docebo Rate Limits](https://apis.io/rate-limits/docebo/docebo-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Docebo Finops](https://apis.io/finops/docebo/docebo-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.docebo.com/)
+- [Documentation](https://developer.docebo.com/docs/api-general-information)
+- [Pricing](https://www.docebo.com/pricing/)
+- [Changelog](https://help.docebo.com/hc/en-us/articles/17920441206034-Deprecated-and-changed-API-calls)
+- [Blog](https://www.docebo.com/learning-network/blog/integration-type/apis-and-webhooks/)
+- [Compliance](https://www.docebo.com/company/compliance-security/)
+- [Terms of service](https://community.docebo.com/site/terms)
+- [Privacy policy](https://www.docebo.com/company/privacy-policy/)
+- [Status](https://status.docebo.com)
+
+## API Evangelist rating
+
+**Kin Score 49.1** — developing · rubric 0.24.0 · scored 2026-10-20
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.7 |
+| Contract quality | 35.2 |
+| Contract governance | 70.9 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 52.6 |
+
+**Agent readiness 44.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 29.4** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/docebo/](https://apis.io/providers/docebo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Docebo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/docebo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
